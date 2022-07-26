@@ -5,3 +5,4 @@ openpyxl
 networkx
 seaborn
 pubchempy
+jupyter
