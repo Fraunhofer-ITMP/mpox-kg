@@ -1,0 +1,20 @@
+,From,Entry,Reviewed,Entry Name,Gene Names,Organism,Length,Gene Names (primary),Protein names
+0,OR10G6,Q8NH81,reviewed,O10G6_HUMAN,OR10G6 OR10G6P,Homo sapiens (Human),332,OR10G6,Olfactory receptor 10G6 (Olfactory receptor OR11-280)
+1,SLFN13,Q68D06,reviewed,SLN13_HUMAN,SLFN13,Homo sapiens (Human),897,SLFN13,"Schlafen family member 13, EC 3.1.-.- (Schlafen-13, hSLFN13)"
+2,IRF3,Q14653,reviewed,IRF3_HUMAN,IRF3,Homo sapiens (Human),427,IRF3,"Interferon regulatory factor 3, IRF-3"
+3,ANKRD49,Q8WVL7,reviewed,ANR49_HUMAN,ANKRD49 FGIF,Homo sapiens (Human),239,ANKRD49,Ankyrin repeat domain-containing protein 49 (Fetal globin-inducing factor)
+4,CCL26,Q9Y258,reviewed,CCL26_HUMAN,CCL26 SCYA26 UNQ216/PRO242,Homo sapiens (Human),94,CCL26,"C-C motif chemokine 26 (CC chemokine IMAC) (Eotaxin-3) (Macrophage inflammatory protein 4-alpha, MIP-4-alpha) (Small-inducible cytokine A26) (Thymic stroma chemokine-1, TSC-1)"
+5,SLFN12,Q8IYM2,reviewed,SLN12_HUMAN,SLFN12,Homo sapiens (Human),578,SLFN12,"Ribonuclease SLFN12, EC 3.1.-.- (Schlafen family member 12)"
+6,CD8A,P01732,reviewed,CD8A_HUMAN,CD8A MAL,Homo sapiens (Human),235,CD8A,T-cell surface glycoprotein CD8 alpha chain (T-lymphocyte differentiation antigen T8/Leu-2) (CD antigen CD8a)
+7,CYB5R3,P00387,reviewed,NB5R3_HUMAN,CYB5R3 DIA1,Homo sapiens (Human),301,CYB5R3,"NADH-cytochrome b5 reductase 3, B5R, Cytochrome b5 reductase, EC 1.6.2.2 (Diaphorase-1) [Cleaved into: NADH-cytochrome b5 reductase 3 membrane-bound form; NADH-cytochrome b5 reductase 3 soluble form ]"
+8,C4A,P0C0L4,reviewed,CO4A_HUMAN,C4A CO4 CPAMD2,Homo sapiens (Human),1744,C4A,Complement C4-A (Acidic complement C4) (C3 and PZP-like alpha-2-macroglobulin domain-containing protein 2) [Cleaved into: Complement C4 beta chain; Complement C4-A alpha chain; C4a anaphylatoxin; C4b-A; C4d-A; Complement C4 gamma chain ]
+9,CD4,P01730,reviewed,CD4_HUMAN,CD4,Homo sapiens (Human),458,CD4,T-cell surface glycoprotein CD4 (T-cell surface antigen T4/Leu-3) (CD antigen CD4)
+10,RNASEL,Q05823,reviewed,RN5A_HUMAN,RNASEL RNS4,Homo sapiens (Human),741,RNASEL,"2-5A-dependent ribonuclease, 2-5A-dependent RNase, EC 3.1.26.- (Ribonuclease 4) (Ribonuclease L, RNase L)"
+11,C4B,P0C0L5,reviewed,CO4B_HUMAN,C4B CO4 CPAMD3; C4B_2,Homo sapiens (Human),1744,C4B; C4B_2,Complement C4-B (Basic complement C4) (C3 and PZP-like alpha-2-macroglobulin domain-containing protein 3) [Cleaved into: Complement C4 beta chain; Complement C4-B alpha chain; C4a anaphylatoxin; C4b-B; C4d-B; Complement C4 gamma chain ]
+12,IFNA1,P01562,reviewed,IFNA1_HUMAN,IFNA1; IFNA13,Homo sapiens (Human),189,IFNA1; IFNA13,"Interferon alpha-1/13, IFN-alpha-1/13 (Interferon alpha-D, LeIF D)"
+13,CRYGC,P07315,reviewed,CRGC_HUMAN,CRYGC CRYG3,Homo sapiens (Human),174,CRYGC,Gamma-crystallin C (Gamma-C-crystallin) (Gamma-crystallin 2-1) (Gamma-crystallin 3)
+14,CD46,P15529,reviewed,MCP_HUMAN,CD46 MCP MIC10,Homo sapiens (Human),392,CD46,Membrane cofactor protein (TLX) (Trophoblast leukocyte common antigen) (CD antigen CD46)
+15,KLRK1,P26718,reviewed,NKG2D_HUMAN,KLRK1 D12S2489E NKG2D,Homo sapiens (Human),216,KLRK1,NKG2-D type II integral membrane protein (Killer cell lectin-like receptor subfamily K member 1) (NK cell receptor D) (NKG2-D-activating NK receptor) (CD antigen CD314)
+16,CD55,P08174,reviewed,DAF_HUMAN,CD55 CR DAF,Homo sapiens (Human),381,CD55,Complement decay-accelerating factor (CD antigen CD55)
+17,DTYMK,P23919,reviewed,KTHY_HUMAN,DTYMK CDC8 TMPK TYMK,Homo sapiens (Human),212,DTYMK,"Thymidylate kinase, EC 2.7.4.9 (dTMP kinase)"
+18,IFNB1,P01574,reviewed,IFNB_HUMAN,IFNB1 IFB IFNB,Homo sapiens (Human),187,IFNB1,"Interferon beta, IFN-beta (Fibroblast interferon)"
