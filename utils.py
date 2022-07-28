@@ -9,7 +9,7 @@ from collections import defaultdict
 import pandas as pd
 import pubchempy as pcp
 import requests
-from chembl_webresource_client.http_errors import HttpBadRequest
+from chembl_webresource_client.http_errors import HttpBadRequest, HttpApplicationError
 from chembl_webresource_client.new_client import new_client
 from pybel import BELGraph
 from pybel.dsl import Protein, Abundance, Pathology, BiologicalProcess
@@ -76,12 +76,9 @@ def RetAct(chemblIds) -> dict:
     ActList = []
 
     filtered_list = [
-        'assay_chembl_id',
-        'assay_type',
         'pchembl_value',
         'target_chembl_id',
-        'target_organism',
-        'bao_label'
+        'target_type'
     ]
 
     for chembl in tqdm(chemblIds, desc='Retrieving bioassays from ChEMBL'):
@@ -92,10 +89,22 @@ def RetAct(chemblIds) -> dict:
             target_organism='Homo sapiens'
         ).only(filtered_list)
 
-        acts = [d for d in acts if float(d.get('pchembl_value')) >= 6]
+        data = []
 
-        acts = acts[:5]
-        ActList.append(list(acts))
+        for d in acts:
+
+            if float(d.get('pchembl_value')) < 6:
+                continue
+
+            if d['target_type'] in ('CELL-LINE', 'UNCHECKED'):
+                continue
+
+            uprot_id = d['target_components'][0]['accession']
+
+            data.append(uprot_id)
+
+        # acts = acts[:5]
+        ActList.append(list(data))
 
     named_ActList = dict(zip(chemblIds, ActList))
     named_ActList = {
@@ -129,8 +138,9 @@ def chembl2uniprot(chemblIDs) -> dict:
     :return:
     """
     getTarget = new_client.target
+    chem2Gene2path = []
     chemHasNoPath = set()
-    chemNotprotein = []
+    chemNotprotein = set()
 
     chem2path = defaultdict(list)
 
@@ -145,11 +155,7 @@ def chembl2uniprot(chemblIDs) -> dict:
 
             if not uprot_id:
                 chemHasNoPath.add(chemblid)
-                continue
 
-            chem2path[chem].append(
-                {'accession': uprot_id}
-            )
         except IndexError:
             chemHasNoPath.add(chemblid)
 
@@ -168,21 +174,45 @@ def chembl2uniprot(chemblIDs) -> dict:
         getGene = chem[0]['target_components'][0]['target_component_synonyms']
         try:
             getGene = [item for item in getGene if item["syn_type"] == "GENE_SYMBOL"][0]
-            chem2path[chem].append(getGene)
 
-            reactome_data = [
-                item
-                for item in chem[0]['target_components'][0]['target_component_xrefs']
-                if item["xref_src_db"] == "Reactome"
-            ]
-            chem2path[chem].append(reactome_data)
+            if not getGene:
+                chemNotprotein.add(chemblid)
 
         except IndexError:
-            chemNotprotein.append(chemblid)
+            chemNotprotein.add(chemblid)
 
+    chemblIDs_filtered = [
+        item
+        for item in chemblIDs_filtered
+        if item not in chemNotprotein
+    ]
+
+    # Extracting data for valid proteins only
+    for chemblid in tqdm(chemblIDs_filtered, desc='Populating ChEMBL data for human proteins'):
+        chem = getTarget.filter(
+            chembl_id=chemblid
+        ).only('target_components')
+
+        # UniProt data
+        uprot_id = chem[0]['target_components'][0]['accession']
+
+        # Gene symbol
+        getGene = chem[0]['target_components'][0]['target_component_synonyms']
+        getGene = [item for item in getGene if item["syn_type"] == "GENE_SYMBOL"][0]
+
+        # Pathway data
+        chem2path = [item for item in chem[0]['target_components'][0]['target_component_xrefs'] if
+                     item["xref_src_db"] == "Reactome"]
+
+        uprot = {'accession': uprot_id}
+        chem2path.append(uprot)
+        chem2path.append(getGene)
+        chem2Gene2path.append(chem2path)
+
+    named_chem2Gene2path = dict(zip(chemblIDs_filtered, chem2Gene2path))
     named_chem2Gene2path = {
         k: v
-        for k, v in chem2path.items()
+        for k, v in named_chem2Gene2path.items()
         if v
     }
     return named_chem2Gene2path
@@ -306,7 +336,7 @@ def ExtractFromUniProt(uniprot_id) -> dict:
     return Uniprot_Dict
 
 
-def chem2moa_rel_2(
+def chem2moa_rel(
     named_mechList,
     org,
     graph: BELGraph
@@ -318,31 +348,32 @@ def chem2moa_rel_2(
     :param graph: BEL graph of Monkeypox
     :return:
     """
-    for chembl_name, chembl_data in tqdm(named_mechList.items(), desc='Populating Chemical-MoA edges'):
-        graph.add_association(
-            Abundance(namespace='ChEMBL', name=chembl_name),
-            BiologicalProcess(namespace='MOA', name=chembl_data['mechanism_of_action']),
-            citation='ChEMBL database',
-            evidence='ChEMBL query'
-        )
-
-        if not chembl_data['target_chembl_id']:
-            continue
-
-        if 'Protein' in chembl_data:
+    for chembl_name, chembl_entries in tqdm(named_mechList.items(), desc='Populating Chemical-MoA edges'):
+        for info in chembl_entries:
             graph.add_association(
                 Abundance(namespace='ChEMBL', name=chembl_name),
-                Protein(namespace=org, name=chembl_data['Protein']),
+                BiologicalProcess(namespace='MOA', name=info['mechanism_of_action']),
                 citation='ChEMBL database',
                 evidence='ChEMBL query'
             )
-        else:
-            graph.add_association(
-                Abundance(namespace='ChEMBL', name=chembl_name),
-                Protein(namespace=org, name=chembl_data['target_chembl_id']),
-                citation='ChEMBL database',
-                evidence='ChEMBL query'
-            )
+
+            if not info['target_chembl_id']:
+                continue
+
+            if 'Protein' in info:
+                graph.add_association(
+                    Abundance(namespace='ChEMBL', name=chembl_name),
+                    Protein(namespace=org, name=info['Protein']),
+                    citation='ChEMBL database',
+                    evidence='ChEMBL query'
+                )
+            else:
+                graph.add_association(
+                    Abundance(namespace='ChEMBL', name=chembl_name),
+                    Protein(namespace=org, name=info['target_chembl_id']),
+                    citation='ChEMBL database',
+                    evidence='ChEMBL query'
+                )
 
     return graph
 
@@ -357,17 +388,18 @@ def chem2dis_rel(
     :param graph:
     :return:
     """
-    for chembl_id, drug_data in tqdm(named_drugIndList.items(), desc='Populating Drug-Indication edges'):
-        graph.add_association(
-            Abundance(namespace='ChEMBL', name=chembl_id),
-            Pathology(namespace='Disease', name=drug_data['mesh_heading']),
-            citation='ChEMBL database',
-            evidence='ChEMBL query'
-        )
+    for chembl_id, drug_entries in tqdm(named_drugIndList.items(), desc='Populating Drug-Indication edges'):
+        for drug_data in drug_entries:
+            graph.add_association(
+                Abundance(namespace='ChEMBL', name=chembl_id),
+                Pathology(namespace='Disease', name=drug_data['mesh_heading']),
+                citation='ChEMBL database',
+                evidence='ChEMBL query'
+            )
     return graph
 
 
-def chem2act_rel_2(
+def chem2act_rel(
     named_ActList,
     org,
     graph: BELGraph
@@ -379,38 +411,39 @@ def chem2act_rel_2(
     :param graph:
     :return:
     """
-    for chemical, chem_data in tqdm(named_ActList.items(), desc='Adding bioassay edges to BEL'):
-        if chem_data['target_chembl_id']:
-            if 'Protein' in chem_data:
-                graph.add_association(
-                    Abundance(namespace='ChEMBLAssay', name=chem_data['assay_chembl_id']),
-                    Protein(namespace=org, name=chem_data['Protein']),
-                    citation='ChEMBL database',
-                    evidence='ChEMBL query'
-                )
-            else:
-                graph.add_association(
-                    Abundance(namespace='ChEMBLAssay', name=chem_data['assay_chembl_id']),
-                    Protein(namespace=org, name=chem_data['target_chembl_id']),
-                    citation='ChEMBL database',
-                    evidence='ChEMBL query'
-                )
+    for chemical, chem_entries in tqdm(named_ActList.items(), desc='Adding bioassay edges to BEL'):
+        for chem_data in chem_entries:
+            if chem_data['target_chembl_id']:
+                if 'Protein' in chem_data:
+                    graph.add_association(
+                        Abundance(namespace='ChEMBLAssay', name=chem_data['assay_chembl_id']),
+                        Protein(namespace=org, name=chem_data['Protein']),
+                        citation='ChEMBL database',
+                        evidence='ChEMBL query'
+                    )
+                else:
+                    graph.add_association(
+                        Abundance(namespace='ChEMBLAssay', name=chem_data['assay_chembl_id']),
+                        Protein(namespace=org, name=chem_data['target_chembl_id']),
+                        citation='ChEMBL database',
+                        evidence='ChEMBL query'
+                    )
 
-        graph.add_association(
-            Abundance(namespace='ChEMBL', name=chemical),
-            Abundance(namespace='ChEMBLAssay', name=chem_data['assay_chembl_id']),
-            citation='ChEMBL database',
-            evidence='ChEMBL query',
-            annotation={
-                'assayType': chem_data['assay_type'],
-                'pChEMBL': chem_data['pchembl_value']
-            }
-        )
+            graph.add_association(
+                Abundance(namespace='ChEMBL', name=chemical),
+                Abundance(namespace='ChEMBLAssay', name=chem_data['assay_chembl_id']),
+                citation='ChEMBL database',
+                evidence='ChEMBL query',
+                annotation={
+                    'assayType': chem_data['assay_type'],
+                    'pChEMBL': chem_data['pchembl_value']
+                }
+            )
 
     return graph
 
 
-def chem2gene2path_rel(
+def gene2path_rel(
     named_chem2geneList,
     org,
     graph
@@ -503,7 +536,7 @@ def _get_target_data(
     target = new_client.target
     activity = new_client.activity
 
-    for protein in protein_list:
+    for protein in tqdm(protein_list, desc='Retrieving chemicals for proteins'):
         if pd.isna(protein):
             continue
         try:
@@ -522,7 +555,7 @@ def _get_target_data(
         if not prot_data:
             continue
 
-        for prot in tqdm(prot_data, f'Analying data for {protein}'):
+        for prot in prot_data:
             # Absence of chembl id
             if not prot['target_chembl_id']:
                 continue
@@ -540,7 +573,10 @@ def _get_target_data(
             for i in prot_activity_data:
                 tmp = {}
 
-                if i['pchembl_value'] is None:
+                try:
+                    if i['pchembl_value'] is None:
+                        continue
+                except HttpApplicationError:
                     continue
 
                 pchembl_val = i['pchembl_value']
@@ -636,15 +672,12 @@ def cid2chembl(cidList) -> list:
     """
 
     cid2chembl_list = []
-    for id in cidList:
+
+    for id in tqdm(cidList, desc='Converting PubChem ids to ChEMBL ids'):
         c = pcp.Compound.from_cid(id)
-        syn = c.synonyms
-        chembl_ids = [
-            name
-            for name in syn
-            if name.startswith('CHEMBL')
-        ]
-        if len(chembl_ids) > 1:
-            cid2chembl_list.append(chembl_ids[0])
+
+        for synonym in c.synonyms:
+            if synonym.startswith('CHEMBL'):
+                cid2chembl_list.append(synonym)
 
     return cid2chembl_list
