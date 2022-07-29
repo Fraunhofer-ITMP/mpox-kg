@@ -51,7 +51,7 @@ def RetDrugInd(chemblIDs) -> dict:
     getDrugInd = new_client.drug_indication
 
     drugIndList = []
-    for chemblid in tqdm(chemblIDs, desc='Retreiving diseases from ChEMBL'):
+    for chemblid in tqdm(chemblIDs, desc='Retrieving diseases from ChEMBL'):
         drugInd = getDrugInd.filter(
             molecule_chembl_id=chemblid
         ).only('mesh_heading')
@@ -65,7 +65,6 @@ def RetDrugInd(chemblIDs) -> dict:
     }
     return named_drugIndList
 
-
 def RetAct(chemblIds) -> dict:
     """Function to retrieve associated assays from ChEMBL
 
@@ -74,34 +73,45 @@ def RetAct(chemblIds) -> dict:
     """
     GetAct = new_client.activity
     ActList = []
+    filtered_list=['assay_chembl_id','assay_type','pchembl_value','target_chembl_id',
+                   'target_organism','bao_label','target_type']
 
-    filtered_list = [
-        'pchembl_value',
-        'target_chembl_id',
-        'target_type'
-    ]
+#     filtered_list = [
+#         'pchembl_value',
+#         'target_chembl_id',
+#         'target_type',
+#         'bao_label'
+#     ]
 
     for chembl in tqdm(chemblIds, desc='Retrieving bioassays from ChEMBL'):
+    #for i in range(len(chemblIds)):
         acts = GetAct.filter(
             molecule_chembl_id=chembl,
             pchembl_value__isnull=False,
             assay_type_iregex='(B|F)',
             target_organism='Homo sapiens'
         ).only(filtered_list)
-
+        
+        #print(chemblIds[i])
         data = []
 
         for d in acts:
 
             if float(d.get('pchembl_value')) < 6:
                 continue
-
-            if d['target_type'] in ('CELL-LINE', 'UNCHECKED'):
+            
+#             try:
+#                 if d['target_type'] in ('CELL-LINE', 'UNCHECKED'):
+#                     continue
+#             except KeyError:
+#                 continue
+            if (d.get('bao_label') != 'single protein format'):
                 continue
 
-            uprot_id = d['target_components'][0]['accession']
-
-            data.append(uprot_id)
+            #uprot_id = d['target_components'][0]['accession']
+            #print(uprot_id)
+            #print(d)
+            data.append(d)
 
         # acts = acts[:5]
         ActList.append(list(data))
@@ -113,6 +123,57 @@ def RetAct(chemblIds) -> dict:
         if v
     }
     return named_ActList
+
+# def RetAct(chemblIds) -> dict:
+    # """Function to retrieve associated assays from ChEMBL
+
+    # :param chemblIds:
+    # :return:
+    # """
+    # GetAct = new_client.activity
+    # ActList = []
+
+    # filtered_list = [
+        # 'pchembl_value',
+        # 'target_chembl_id',
+        # 'target_type'
+    # ]
+
+    # for chembl in tqdm(chemblIds, desc='Retrieving bioassays from ChEMBL'):
+        # acts = GetAct.filter(
+            # molecule_chembl_id=chembl,
+            # pchembl_value__isnull=False,
+            # assay_type_iregex='(B|F)',
+            # target_organism='Homo sapiens'
+        # ).only(filtered_list)
+
+        # data = []
+
+        # for d in acts:
+
+            # if float(d.get('pchembl_value')) < 6:
+                # continue
+            # try:
+
+                # if d['target_type'] in ('CELL-LINE', 'UNCHECKED'):
+                    # continue
+            # except IndexError:
+                # continue
+
+            # uprot_id = d['target_components'][0]['accession']
+
+            # data.append(uprot_id)
+
+        # # acts = acts[:5]
+        # ActList.append(list(data))
+
+    # named_ActList = dict(zip(chemblIds, ActList))
+    # named_ActList = {
+        # k: v
+        # for k, v in named_ActList.items()
+        # if v
+    # }
+    # return named_ActList
 
 
 def Ret_chembl_protein(sourceList) -> list:
@@ -594,6 +655,9 @@ def _get_target_data(
                     'compound_name': i['molecule_pref_name'].capitalize() if i['molecule_pref_name'] else ''
                 })
                 df_data.append(tmp)
+            
+            time.sleep(1)
+            print('1 seconds of break')
 
     # Merge duplicated protein-chemical entries into one
     df = pd.DataFrame()
@@ -681,3 +745,257 @@ def cid2chembl(cidList) -> list:
                 cid2chembl_list.append(synonym)
 
     return cid2chembl_list
+    
+# def chembl2rxn_rel(itmpGraph):
+    
+    # infile = open('data/normalized_data/drugReactions.pkl','rb')
+    # rxn_df = pickle.load(infile)
+    # infile.close()
+    
+    # chembl_id = []
+    # for node in itmpGraph.nodes():
+        # if isinstance(node,pybel.dsl.Abundance):
+            # if node.namespace == 'ChEMBL':
+                # chembl_id.append(node.name)
+            
+    # chembl_id_rxn = rxn_df[rxn_df['chembl_id'].isin(chembl_id)]
+    # chembl_id_rxn = chembl_id_rxn.reset_index(drop=True)
+    # for i in range(len(chembl_id_rxn)):
+        # itmpGraph.add_association(Abundance(namespace='ChEMBL',name = chembl_id_rxn['chembl_id'][i]),
+                                  # Pathology(namespace='SideEffect',name = chembl_id_rxn['event'][i]),
+                                  # citation = "OpenTargets Platform",evidence = 'DrugReactions')
+        
+    # return(itmpGraph)
+                              
+
+#import time
+# def _get_target_data(
+#     protein_list: list,
+#     organism: str
+# ) -> pd.DataFrame:
+#     """Get chemical for target data from ChEMBL.
+
+#     :param protein_list:
+#     :param organism:
+#     :return:
+#     """
+#     df_data = []
+
+#     target = new_client.target
+#     activity = new_client.activity
+
+#     for protein in tqdm(protein_list, desc='Retrieving chemicals for proteins'):
+#         if pd.isna(protein):
+#             continue
+#         try:
+#             prot_data = [target.search(protein)[0]]
+
+#             # Search for protein with same synonym
+#             if prot_data == [None]:
+#                 prot_data = target.filter(
+#                     target_synonym__icontains=protein, target_organism__istartswith=organism
+#                 ).only(['target_chembl_id', 'target_pref_name', 'molecule_chembl_id', 'molecule_pref_name'])
+#         except HttpBadRequest:
+#             print(f'Cannot search for {protein} due to chembl error')
+#             continue
+
+#         # No results found
+#         if not prot_data:
+#             continue
+
+#         for prot in prot_data:
+#             # Absence of chembl id
+#             if not prot['target_chembl_id']:
+#                 continue
+
+#             prot_activity_data = activity.filter(
+#                 target_chembl_id=prot['target_chembl_id'],
+#                 assay_type_iregex='(B|F)',
+#             ).only([
+#                 'pchembl_value', 'molecule_chembl_id', 'activity_id', 'target_pref_name', 'molecule_pref_name'
+#             ])
+
+#             if len(prot_activity_data) < 1:
+#                 continue
+
+#             for i in prot_activity_data:
+#                 tmp = {}
+
+#                 try:
+#                     if i['pchembl_value'] is None:
+#                         continue
+#                 except HttpApplicationError:
+#                     continue
+
+#                 pchembl_val = i['pchembl_value']
+
+#                 if float(pchembl_val) < 6:
+#                     tmp['activity'] = 'inhibitor'
+#                 else:
+#                     tmp['activity'] = 'activator'
+
+#                 tmp.update({
+#                     'protein_symbol': protein,
+#                     'protein_name': i['target_pref_name'],
+#                     'aid': str(i['activity_id']),
+#                     'chembl_id': i['molecule_chembl_id'],
+#                     'compound_name': i['molecule_pref_name'].capitalize() if i['molecule_pref_name'] else ''
+#                 })
+#                 df_data.append(tmp)
+            
+#             time.sleep(5)
+#             print('5 seconds of break')
+
+#     # Merge duplicated protein-chemical entries into one
+#     df = pd.DataFrame()
+#     if len(df_data)==0:
+#         return df
+        
+
+#     for idx, row in tqdm(enumerate(df_data), total=len(df_data), desc='Preparing data'):
+#         if idx == 0:
+#             df = df.append(row, ignore_index=True)
+#         else:
+#             _in_df = df.loc[
+#                 (df['protein_symbol'] == row['protein_symbol']) & (df['chembl_id'] == row['chembl_id'])
+#                 ]
+
+#             if _in_df.empty:
+#                 df = df.append(row, ignore_index=True)
+#             else:
+#                 row_index = _in_df.index
+
+#                 # Check existing citations
+#                 existing_assays = set(df.loc[row_index, 'aid'].values[0].split(' | '))
+#                 old_count = len(existing_assays)
+#                 existing_assays.add(row['aid'])
+#                 new_count = len(existing_assays)
+
+#                 # Check if new citation added, if yes - add respective data
+#                 if old_count < new_count:
+#                     df.loc[row_index, 'aid'] = ' | '.join(existing_assays)
+#     print(df)
+#     print(df_data)
+#     df = df[['activity', 'protein_symbol', 'protein_name', 'aid', 'chembl_id', 'compound_name']]
+    
+#     return df
+
+
+# def target_list_to_chemical(
+#     proteins: list,
+#     organism: str = 'Homo sapiens',
+# ) -> pd.DataFrame:
+#     """Extract chemical information on list of targets
+#     Usage:
+#     >> target_list_to_chemical(proteins=['RIPK'])
+#     """
+
+#     df = _get_target_data(protein_list=proteins, organism=organism)
+#     return df
+
+#def _get_target_data(protein_list: list, organism: str):
+#     """Get chemical for target data from ChEMBL"""
+#     df_data = []
+
+#     target = new_client.target
+#     activity = new_client.activity
+
+#     for protein in protein_list:
+#         if pd.isna(protein):
+#             continue
+#         try:
+#             prot_data = [target.search(protein)[0]]
+
+#             # Search for protein with same synonym
+#             if prot_data == [None]:
+#                 prot_data = target.filter(
+#                     target_synonym__icontains=protein, target_organism__istartswith=organism
+#                 ).only(['target_chembl_id', 'target_pref_name', 'molecule_chembl_id', 'molecule_pref_name'])
+#         except HttpBadRequest:
+#             print(f'Cannot search for {protein} due to chembl error')
+#             continue
+
+#         # No results found
+#         if not prot_data:
+#             continue
+
+#         for prot in tqdm(prot_data, f'Analying data for {protein}'):
+#             # Absence of chembl id
+#             if not prot['target_chembl_id']:
+#                 continue
+
+#             prot_activity_data = activity.filter(
+#                 target_chembl_id=prot['target_chembl_id'],
+#                 assay_type_iregex='(B|F)',
+#             ).only([
+#                 'pchembl_value', 'molecule_chembl_id', 'activity_id', 'target_pref_name', 'molecule_pref_name'
+#             ])
+
+#             if len(prot_activity_data) < 1:
+#                 continue
+
+#             for i in prot_activity_data:
+#                 tmp = {}
+
+#                 if i['pchembl_value'] is None:
+#                     continue
+
+#                 pchembl_val = i['pchembl_value']
+
+#                 if float(pchembl_val) < 6:
+#                     tmp['activity'] = 'inhibitor'
+#                 else:
+#                     tmp['activity'] = 'activator'
+
+#                 tmp['protein_symbol'] = protein
+#                 tmp['protein_name'] = i['target_pref_name']
+#                 tmp['aid'] = str(i['activity_id'])
+#                 tmp['chembl_id'] = i['molecule_chembl_id']
+#                 tmp['compound_name'] = i['molecule_pref_name'].capitalize() if i['molecule_pref_name'] else ''
+#                 df_data.append(tmp)
+                
+#             time.sleep(10)
+
+#     # Merge duplicated protein-chemical entries into one
+#     df = pd.DataFrame()
+
+#     for idx, row in tqdm(enumerate(df_data), total=len(df_data), desc='Preparing data'):
+#         if idx == 0:
+#             df = df.append(row, ignore_index=True)
+#         else:
+#             _in_df = df.loc[
+#                 (df['protein_symbol'] == row['protein_symbol']) & (df['chembl_id'] == row['chembl_id'])
+#             ]
+
+#             if _in_df.empty:
+#                 df = df.append(row, ignore_index=True)
+#             else:
+#                 row_index = _in_df.index
+
+#                 # Check existing citations
+#                 existing_assays = set(df.loc[row_index, 'aid'].values[0].split(' | '))
+#                 old_count = len(existing_assays)
+#                 existing_assays.add(row['aid'])
+#                 new_count = len(existing_assays)
+
+#                 # Check if new citation added, if yes - add respective data
+#                 if old_count < new_count:
+#                     df.loc[row_index, 'aid'] = ' | '.join(existing_assays)
+#     df = df[['activity', 'protein_symbol', 'protein_name', 'aid', 'chembl_id', 'compound_name']]
+#     return df
+
+# def target_list_to_chemical(
+#     proteins: list,
+#     organism: str = 'Homo sapiens',
+#     output_dir: str = ''
+# ) -> None:
+#     """Extract chemical information on list of targets
+#     Usage:
+#     >> target_list_to_chemical(proteins=['RIPK'])
+#     """
+
+#     df = _get_target_data(protein_list=proteins, organism=organism)
+#     #os.makedirs(output_dir, exist_ok=True)
+#     #df.to_csv(os.path.join(output_dir, 'chemical_annotated.csv'), sep='\t', index=False)
+#     return(df)
+   
