@@ -1,0 +1,446 @@
+activity	protein_symbol	protein_name	aid	chembl_id	compound_name
+inhibitor	Q14653	Interferon regulatory factor 3	18928390	CHEMBL4471585	
+inhibitor	P00387	NADH-cytochrome b5 reductase	19493895	CHEMBL4525466	
+activator	P01730	T-cell surface antigen CD4	105411	CHEMBL506605	Isocomplestatin
+activator	P01730	T-cell surface antigen CD4	106547	CHEMBL525803	Chloropeptin
+activator	P01730	T-cell surface antigen CD4	106550	CHEMBL3143464	
+inhibitor	P01730	T-cell surface antigen CD4	346232	CHEMBL3138360	
+inhibitor	P01730	T-cell surface antigen CD4	346237	CHEMBL3138345	
+inhibitor	P01730	T-cell surface antigen CD4	349049	CHEMBL3138187	
+inhibitor	P01730	T-cell surface antigen CD4	351635	CHEMBL3138374	
+inhibitor	P01730	T-cell surface antigen CD4	360280	CHEMBL3138095	
+inhibitor	P01730	T-cell surface antigen CD4	373064	CHEMBL3138378	
+inhibitor	P01730	T-cell surface antigen CD4	375870	CHEMBL3138119	
+inhibitor	P01730	T-cell surface antigen CD4	1911291	CHEMBL231224	
+inhibitor	P01730	T-cell surface antigen CD4	1911292	CHEMBL267655	
+inhibitor	P01730	T-cell surface antigen CD4	1911293	CHEMBL388209	
+inhibitor	P01730	T-cell surface antigen CD4	1911294	CHEMBL230799	
+inhibitor	P01730	T-cell surface antigen CD4	1911295	CHEMBL267658	
+inhibitor	P01730	T-cell surface antigen CD4	1911296	CHEMBL388208	
+inhibitor	P01730	T-cell surface antigen CD4	1911297	CHEMBL267657	
+inhibitor	P01730	T-cell surface antigen CD4	1911298	CHEMBL230798	
+inhibitor	P01730	T-cell surface antigen CD4	1911299	CHEMBL388207	
+inhibitor	P01730	T-cell surface antigen CD4	1911300	CHEMBL230796	
+activator	P01730	T-cell surface antigen CD4	20710180	CHEMBL1852155	
+activator	P01730	T-cell surface antigen CD4	22435351	CHEMBL1819181	Cyclotriazadisulfonamide hydrochloride
+inhibitor	P01730	T-cell surface antigen CD4	22435352	CHEMBL4783030	
+activator	P01730	T-cell surface antigen CD4	22435353	CHEMBL4755141	
+activator	P01730	T-cell surface antigen CD4	22435354	CHEMBL4783761	
+inhibitor	P01730	T-cell surface antigen CD4	22435355	CHEMBL4750160	
+inhibitor	P01730	T-cell surface antigen CD4	22435356	CHEMBL4743003	
+inhibitor	P01730	T-cell surface antigen CD4	22435357	CHEMBL4782080	
+activator	P01730	T-cell surface antigen CD4	22435358	CHEMBL4746252	
+activator	P01730	T-cell surface antigen CD4	22435359	CHEMBL4747494	
+activator	P01730	T-cell surface antigen CD4	22435360	CHEMBL4758659	
+activator	P01730	T-cell surface antigen CD4	22435361	CHEMBL4750983	
+activator	P01730	T-cell surface antigen CD4	22435362	CHEMBL4786809	
+activator	P01730	T-cell surface antigen CD4	22435363	CHEMBL4748787	
+inhibitor	P01730	T-cell surface antigen CD4	22435364	CHEMBL4785236	
+activator	P01730	T-cell surface antigen CD4	22435365	CHEMBL4791666	
+activator	Q05823	RNase L	147261	CHEMBL608874	
+activator	Q05823	RNase L	1090961 | 1090960 | 609061 | 1206250 | 609060 | 1090959 | 1206249	CHEMBL414948	
+activator	Q05823	RNase L	1071606 | 1071607 | 1071608	CHEMBL214603	
+inhibitor	Q05823	RNase L	1075172 | 1075171 | 1075170	CHEMBL407239	
+activator	Q05823	RNase L	1079901 | 1079900 | 1079902	CHEMBL410213	
+activator	Q05823	RNase L	1096559 | 1096560 | 1096558	CHEMBL405496	
+activator	Q05823	RNase L	1097676 | 1097678 | 1097677	CHEMBL402676	
+activator	Q05823	RNase L	1102251 | 1102253 | 1102252	CHEMBL384725	
+activator	Q05823	RNase L	1185035 | 1185036	CHEMBL1159914	
+inhibitor	Q05823	RNase L	2148567 | 2148542	CHEMBL259819	
+inhibitor	Q05823	RNase L	2148543	CHEMBL406556	
+inhibitor	Q05823	RNase L	2148544	CHEMBL261864	
+inhibitor	Q05823	RNase L	2148545	CHEMBL259804	
+inhibitor	Q05823	RNase L	2148546	CHEMBL408340	
+inhibitor	Q05823	RNase L	2148547	CHEMBL260229	
+inhibitor	Q05823	RNase L	2148548	CHEMBL265438	
+inhibitor	Q05823	RNase L	2148549	CHEMBL410485	
+inhibitor	Q05823	RNase L	2148550	CHEMBL265469	
+inhibitor	Q05823	RNase L	2148551	CHEMBL411931	
+inhibitor	Q05823	RNase L	2148568 | 2148552	CHEMBL259633	
+activator	Q05823	RNase L	2148573 | 2148572 | 2148580	CHEMBL404038	
+activator	Q05823	RNase L	10951914 | 3092040 | 16630818	CHEMBL601940	
+activator	Q05823	RNase L	16630816 | 3092048	CHEMBL601938	
+activator	Q05823	RNase L	3092050	CHEMBL591446	
+activator	Q05823	RNase L	10951898	CHEMBL2058766	
+activator	Q05823	RNase L	10951899	CHEMBL2058765	
+activator	Q05823	RNase L	10951900	CHEMBL2058764	
+activator	Q05823	RNase L	10951901	CHEMBL2058763	
+activator	Q05823	RNase L	10951903	CHEMBL2058191	
+activator	Q05823	RNase L	10951907	CHEMBL2057902	
+activator	Q05823	RNase L	10951908	CHEMBL2057901	
+activator	Q05823	RNase L	10951909	CHEMBL2057900	
+activator	Q05823	RNase L	10951911	CHEMBL2057898	
+activator	Q05823	RNase L	10951912	CHEMBL2058187	
+activator	Q05823	RNase L	10951917	CHEMBL2058183	
+activator	Q05823	RNase L	13407452	CHEMBL2414865	
+activator	Q05823	RNase L	13407459	CHEMBL2414866	
+activator	Q05823	RNase L	13407460	CHEMBL2414867	
+activator	Q05823	RNase L	16630810	CHEMBL3817920	
+activator	Q05823	RNase L	16630811	CHEMBL3818137	
+activator	Q05823	RNase L	16630812	CHEMBL3818726	
+activator	Q05823	RNase L	16630813	CHEMBL3818262	
+activator	Q05823	RNase L	16630814	CHEMBL3819183	
+activator	Q05823	RNase L	16630815	CHEMBL3819262	
+inhibitor	P23919	Thymidylate kinase	559472	CHEMBL1236157	
+inhibitor	P23919	Thymidylate kinase	559481	CHEMBL605435	
+inhibitor	P23919	Thymidylate kinase	580085	CHEMBL606084	
+inhibitor	P23919	Thymidylate kinase	581193	CHEMBL604405	
+inhibitor	P23919	Thymidylate kinase	1837353	CHEMBL52609	Thymidine
+inhibitor	P23919	Thymidylate kinase	2339202	CHEMBL449771	
+inhibitor	P23919	Thymidylate kinase	7966121	CHEMBL1928428	
+inhibitor	P23919	Thymidylate kinase	8060443	CHEMBL395814	
+inhibitor	P23919	Thymidylate kinase	12160520	CHEMBL2179281	
+inhibitor	P23919	Thymidylate kinase	12160521	CHEMBL2179279	
+inhibitor	P23919	Thymidylate kinase	12160522	CHEMBL2179277	
+activator	P23919	Thymidylate kinase	22452439	CHEMBL4749381	
+activator	P23919	Thymidylate kinase	22452440	CHEMBL4758532	
+inhibitor	P23919	Thymidylate kinase	22452441	CHEMBL4757635	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	37517	CHEMBL3144029	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	37522	CHEMBL348359	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3596393 | 490698 | 2259929 | 5241977 | 1747048 | 2001007 | 2575557 | 928730 | 18777375 | 39949 | 92925 | 2008219	CHEMBL866	Mycophenolic acid
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	49855	CHEMBL608195	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2575569 | 2001006 | 13868083 | 1752492 | 5241978 | 49860	CHEMBL410744	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	66524	CHEMBL608194	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	66529	CHEMBL162782	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	70408 | 1752494	CHEMBL2311206	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	71651	CHEMBL3144028	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	475080	CHEMBL65013	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	478731	CHEMBL23843	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	484902	CHEMBL347721	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	488383	CHEMBL150777	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	501339	CHEMBL152959	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	501343	CHEMBL358876	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	511020	CHEMBL152988	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	655868	CHEMBL23716	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	909123	CHEMBL169198	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	909127	CHEMBL167966	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	910534	CHEMBL170557	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	910538	CHEMBL168861	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	917071	CHEMBL165934	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	919507	CHEMBL166664	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	927254	CHEMBL169309	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	927258	CHEMBL101365	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	938558	CHEMBL443556	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	942401	CHEMBL165933	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	942405	CHEMBL424363	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1034332 | 1034331	CHEMBL3144004	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1040359 | 1040358 | 5241976	CHEMBL2364562	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	1046572	CHEMBL3143998	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1048978 | 1048977	CHEMBL3144003	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1048982 | 1048981	CHEMBL451855	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1747021	CHEMBL208921	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1747027	CHEMBL209069	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1747030	CHEMBL428633	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1752538	CHEMBL384114	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	1752580	CHEMBL215311	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001000 | 2008213	CHEMBL394276	Tiazofurin adenine dinucleotide
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868082 | 2575567 | 2001004	CHEMBL392204	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001005 | 2575568	CHEMBL410745	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001008	CHEMBL392203	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001009	CHEMBL429702	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001010	CHEMBL235533	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001011	CHEMBL414564	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001012	CHEMBL265870	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001013	CHEMBL441190	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001014	CHEMBL409560	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001015	CHEMBL264107	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2001016	CHEMBL394277	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2008214	CHEMBL429090	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2008215	CHEMBL239105	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2008216	CHEMBL238905	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2008217	CHEMBL392178	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3596386 | 2008218	CHEMBL238461	Mycophenolic hydroxamic acid
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2027371	CHEMBL246969	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2259934 | 2259936	CHEMBL443417	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2259937	CHEMBL486325	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2259939	CHEMBL444502	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2259943	CHEMBL487565	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2575561	CHEMBL504308	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2575562	CHEMBL476562	Mycophenolic bis(sulfonamide)
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2575563	CHEMBL444916	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2575564	CHEMBL389392	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2575565	CHEMBL510826	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	2575566	CHEMBL446927	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	2575581	CHEMBL508103	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3369527	CHEMBL1170847	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3369538	CHEMBL1170848	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3369540	CHEMBL1170849	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3369542	CHEMBL1170850	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3369544	CHEMBL1170851	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407376	CHEMBL1215173	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407377	CHEMBL1215174	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407379	CHEMBL1215176	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407380	CHEMBL1215241	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407381	CHEMBL1215242	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407382	CHEMBL1215243	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407383	CHEMBL1215244	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407384	CHEMBL1215245	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407385	CHEMBL1215311	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407386	CHEMBL1215312	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3407387	CHEMBL1215313	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3596388	CHEMBL237760	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3596389	CHEMBL157617	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3596390	CHEMBL437376	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	3596391	CHEMBL132727	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	3596392	CHEMBL238403	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241979	CHEMBL1683637	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241980	CHEMBL1683638	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241981	CHEMBL1683639	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241982	CHEMBL1683640	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241983	CHEMBL1683742	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241984	CHEMBL1683743	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241985	CHEMBL1683744	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241986	CHEMBL1683745	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241987	CHEMBL1683746	Mycophenolic ethylenebis
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241988	CHEMBL1683747	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241989	CHEMBL1683748	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241990	CHEMBL1683749	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241991	CHEMBL1683750	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241992	CHEMBL1683751	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241993	CHEMBL1683752	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241994	CHEMBL1683753	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241995	CHEMBL1683754	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	5241996	CHEMBL1683755	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13420089	CHEMBL2418586	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13420090	CHEMBL2418585	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13420091	CHEMBL2418580	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868042	CHEMBL3098176	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868043	CHEMBL3098175	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868044	CHEMBL3098174	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868045	CHEMBL3098173	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868046	CHEMBL3098172	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868047	CHEMBL3098171	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868048	CHEMBL3098170	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868049	CHEMBL3098169	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868050	CHEMBL3098168	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868051	CHEMBL3098167	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868052	CHEMBL3098166	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868053	CHEMBL3098165	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868054	CHEMBL3098164	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868055	CHEMBL3098163	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868056	CHEMBL2437255	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868057	CHEMBL2437266	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868058	CHEMBL3098186	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868059	CHEMBL2437254	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868060	CHEMBL2437265	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868061	CHEMBL3098185	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868062	CHEMBL2437269	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868063	CHEMBL2437258	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868064	CHEMBL3098184	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868065	CHEMBL2437273	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868066	CHEMBL2437262	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868067	CHEMBL3098183	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868068	CHEMBL2437272	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868069	CHEMBL2437261	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868070	CHEMBL3098182	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868071	CHEMBL3098181	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868072	CHEMBL3098180	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868073	CHEMBL3098179	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868074	CHEMBL3098178	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868075	CHEMBL3098177	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868076	CHEMBL3098192	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868077	CHEMBL3098191	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868078	CHEMBL3098190	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868079	CHEMBL3098189	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868080	CHEMBL3098188	
+activator	P20839	Inosine-5'-monophosphate dehydrogenase 1	13868081	CHEMBL3098187	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777370	CHEMBL4285191	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777371	CHEMBL1602759	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777372	CHEMBL3416316	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777373	CHEMBL4288980	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777374	CHEMBL4278303	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777393	CHEMBL4288538	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777394	CHEMBL4280641	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777395	CHEMBL4166303	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777396	CHEMBL4284098	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777397	CHEMBL4277486	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777399	CHEMBL4176498	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777400	CHEMBL4288794	
+inhibitor	P20839	Inosine-5'-monophosphate dehydrogenase 1	18777401	CHEMBL4289187	
+inhibitor	P23526	Adenosylhomocysteinase	39396	CHEMBL2448172	
+activator	P23526	Adenosylhomocysteinase	51702	CHEMBL280595	
+activator	P23526	Adenosylhomocysteinase	55526	CHEMBL281476	
+inhibitor	P23526	Adenosylhomocysteinase	86012	CHEMBL202701	
+inhibitor	P23526	Adenosylhomocysteinase	93924	CHEMBL608943	
+inhibitor	P23526	Adenosylhomocysteinase	99018	CHEMBL608312	
+inhibitor	P23526	Adenosylhomocysteinase	102101	CHEMBL2093950	
+inhibitor	P23526	Adenosylhomocysteinase	104943	CHEMBL608911	
+inhibitor	P23526	Adenosylhomocysteinase	2162505 | 199981 | 199980 | 2143337	CHEMBL129014	Noraristeromycin
+inhibitor	P23526	Adenosylhomocysteinase	2143330 | 2162518 | 219051 | 219050	CHEMBL129469	
+activator	P23526	Adenosylhomocysteinase	227576	CHEMBL50728	
+inhibitor	P23526	Adenosylhomocysteinase	227653 | 5219211	CHEMBL63311	
+inhibitor	P23526	Adenosylhomocysteinase	228112	CHEMBL603565	
+inhibitor	P23526	Adenosylhomocysteinase	245944 | 14710449 | 14710473 | 1011833 | 228909 | 5219210	CHEMBL299961	
+inhibitor	P23526	Adenosylhomocysteinase	230551	CHEMBL604826	
+activator	P23526	Adenosylhomocysteinase	231610 | 19069031	CHEMBL2115031	
+activator	P23526	Adenosylhomocysteinase	5219205 | 990792 | 3269832 | 328902 | 15618176 | 14710447 | 232692 | 1165464 | 14710471 | 251353	CHEMBL8771	Neoplanocin a
+activator	P23526	Adenosylhomocysteinase	236375	CHEMBL50306	
+activator	P23526	Adenosylhomocysteinase	240511	CHEMBL296392	
+inhibitor	P23526	Adenosylhomocysteinase	241726	CHEMBL299999	
+activator	P23526	Adenosylhomocysteinase	1459089 | 5219206 | 244557 | 15618175	CHEMBL64718	Fluoro-neplanocin a
+inhibitor	P23526	Adenosylhomocysteinase	246256	CHEMBL430774	
+inhibitor	P23526	Adenosylhomocysteinase	247249	CHEMBL299135	
+activator	P23526	Adenosylhomocysteinase	253054	CHEMBL2374428	
+inhibitor	P23526	Adenosylhomocysteinase	254168	CHEMBL298188	
+activator	P23526	Adenosylhomocysteinase	255691 | 19069030 | 20603300	CHEMBL2115462	
+inhibitor	P23526	Adenosylhomocysteinase	256018	CHEMBL606109	
+activator	P23526	Adenosylhomocysteinase	2162536 | 258212 | 14710451 | 14710474	CHEMBL301499	
+activator	P23526	Adenosylhomocysteinase	262380	CHEMBL53931	
+activator	P23526	Adenosylhomocysteinase	307183	CHEMBL49908	
+activator	P23526	Adenosylhomocysteinase	309935	CHEMBL49737	
+activator	P23526	Adenosylhomocysteinase	309939	CHEMBL50600	
+activator	P23526	Adenosylhomocysteinase	315043	CHEMBL295729	
+activator	P23526	Adenosylhomocysteinase	317589	CHEMBL298115	
+activator	P23526	Adenosylhomocysteinase	317593	CHEMBL296107	
+activator	P23526	Adenosylhomocysteinase	318807	CHEMBL49511	
+activator	P23526	Adenosylhomocysteinase	320061	CHEMBL49917	
+activator	P23526	Adenosylhomocysteinase	330125	CHEMBL46348	
+inhibitor	P23526	Adenosylhomocysteinase	331505	CHEMBL50388	
+activator	P23526	Adenosylhomocysteinase	334294	CHEMBL415930	
+activator	P23526	Adenosylhomocysteinase	336727	CHEMBL416457	
+activator	P23526	Adenosylhomocysteinase	338015	CHEMBL296880	
+activator	P23526	Adenosylhomocysteinase	344396	CHEMBL45537	
+inhibitor	P23526	Adenosylhomocysteinase	365268	CHEMBL26801	
+activator	P23526	Adenosylhomocysteinase	365277	CHEMBL268272	3-deazaaristeromycin a
+activator	P23526	Adenosylhomocysteinase	2143336 | 14710450 | 388309 | 19069029	CHEMBL49935	Aristeromycin
+inhibitor	P23526	Adenosylhomocysteinase	399325	CHEMBL606502	
+inhibitor	P23526	Adenosylhomocysteinase	416070	CHEMBL607755	
+inhibitor	P23526	Adenosylhomocysteinase	417200	CHEMBL612194	
+inhibitor	P23526	Adenosylhomocysteinase	556258	CHEMBL140440	
+activator	P23526	Adenosylhomocysteinase	556794	CHEMBL1288616	
+activator	P23526	Adenosylhomocysteinase	559284	CHEMBL3349025	
+activator	P23526	Adenosylhomocysteinase	817512 | 561353	CHEMBL77518	
+activator	P23526	Adenosylhomocysteinase	564985	CHEMBL605900	
+activator	P23526	Adenosylhomocysteinase	571278	CHEMBL606276	
+activator	P23526	Adenosylhomocysteinase	1159099 | 578610 | 789089	CHEMBL308037	
+inhibitor	P23526	Adenosylhomocysteinase	582833	CHEMBL607985	
+inhibitor	P23526	Adenosylhomocysteinase	586628	CHEMBL606446	
+activator	P23526	Adenosylhomocysteinase	588406	CHEMBL605902	
+activator	P23526	Adenosylhomocysteinase	672122	CHEMBL2092790	
+activator	P23526	Adenosylhomocysteinase	673389	CHEMBL604208	
+activator	P23526	Adenosylhomocysteinase	682869	CHEMBL608056	
+activator	P23526	Adenosylhomocysteinase	700492	CHEMBL2092789	
+inhibitor	P23526	Adenosylhomocysteinase	705540	CHEMBL610125	
+inhibitor	P23526	Adenosylhomocysteinase	789086	CHEMBL76858	
+activator	P23526	Adenosylhomocysteinase	825601	CHEMBL77965	
+activator	P23526	Adenosylhomocysteinase	841765	CHEMBL2368540	
+activator	P23526	Adenosylhomocysteinase	1024703	CHEMBL147260	
+inhibitor	P23526	Adenosylhomocysteinase	1041319	CHEMBL607987	
+inhibitor	P23526	Adenosylhomocysteinase	1049960	CHEMBL604963	
+activator	P23526	Adenosylhomocysteinase	1144889	CHEMBL610148	
+activator	P23526	Adenosylhomocysteinase	1146372	CHEMBL595547	5'-carboxy adenosine
+inhibitor	P23526	Adenosylhomocysteinase	1147692	CHEMBL1289990	
+inhibitor	P23526	Adenosylhomocysteinase	1147695	CHEMBL610101	
+activator	P23526	Adenosylhomocysteinase	1147698	CHEMBL608072	
+activator	P23526	Adenosylhomocysteinase	1149822	CHEMBL281337	
+inhibitor	P23526	Adenosylhomocysteinase	1150144	CHEMBL607717	
+activator	P23526	Adenosylhomocysteinase	1152211	CHEMBL284846	3-deazaneplanocin a
+activator	P23526	Adenosylhomocysteinase	1152524	CHEMBL610383	
+inhibitor	P23526	Adenosylhomocysteinase	1153825	CHEMBL605866	
+activator	P23526	Adenosylhomocysteinase	1160372	CHEMBL610384	
+inhibitor	P23526	Adenosylhomocysteinase	1164609	CHEMBL609186	
+activator	P23526	Adenosylhomocysteinase	1165889	CHEMBL608915	
+inhibitor	P23526	Adenosylhomocysteinase	1172423	CHEMBL519809	
+activator	P23526	Adenosylhomocysteinase	1179882	CHEMBL494759	(s)-dhpa
+activator	P23526	Adenosylhomocysteinase	1180248	CHEMBL612224	
+inhibitor	P23526	Adenosylhomocysteinase	2444646 | 1214125	CHEMBL94110	
+inhibitor	P23526	Adenosylhomocysteinase	1457651	CHEMBL610594	
+inhibitor	P23526	Adenosylhomocysteinase	1457653	CHEMBL611107	
+inhibitor	P23526	Adenosylhomocysteinase	1457655	CHEMBL610838	
+inhibitor	P23526	Adenosylhomocysteinase	1457659	CHEMBL610303	
+inhibitor	P23526	Adenosylhomocysteinase	1458674	CHEMBL187650	
+inhibitor	P23526	Adenosylhomocysteinase	1458677	CHEMBL365452	
+inhibitor	P23526	Adenosylhomocysteinase	1460908	CHEMBL610574	
+inhibitor	P23526	Adenosylhomocysteinase	1460910	CHEMBL610300	
+inhibitor	P23526	Adenosylhomocysteinase	1460914	CHEMBL611108	
+activator	P23526	Adenosylhomocysteinase	1471496	CHEMBL611098	
+activator	P23526	Adenosylhomocysteinase	1510416	CHEMBL2364569	
+inhibitor	P23526	Adenosylhomocysteinase	1679973	CHEMBL383344	
+inhibitor	P23526	Adenosylhomocysteinase	1971360	CHEMBL302376	
+inhibitor	P23526	Adenosylhomocysteinase	1971361	CHEMBL231952	
+inhibitor	P23526	Adenosylhomocysteinase	1971362	CHEMBL232751	
+inhibitor	P23526	Adenosylhomocysteinase	2143333	CHEMBL262063	
+inhibitor	P23526	Adenosylhomocysteinase	2143334	CHEMBL261619	
+inhibitor	P23526	Adenosylhomocysteinase	2143335	CHEMBL405186	
+inhibitor	P23526	Adenosylhomocysteinase	2162515	CHEMBL405082	
+inhibitor	P23526	Adenosylhomocysteinase	2162516	CHEMBL261395	
+inhibitor	P23526	Adenosylhomocysteinase	2444647	CHEMBL507668	
+inhibitor	P23526	Adenosylhomocysteinase	2444648	CHEMBL451781	
+activator	P23526	Adenosylhomocysteinase	3269834	CHEMBL1098945	
+inhibitor	P23526	Adenosylhomocysteinase	3270245	CHEMBL155085	Ilimaquinone
+inhibitor	P23526	Adenosylhomocysteinase	5219207	CHEMBL1672008	
+inhibitor	P23526	Adenosylhomocysteinase	5219208	CHEMBL1672009	
+activator	P23526	Adenosylhomocysteinase	14710448 | 14710472	CHEMBL419393	
+activator	P23526	Adenosylhomocysteinase	14710452 | 14710475	CHEMBL3290650	
+inhibitor	P23526	Adenosylhomocysteinase	14710456 | 14710479	CHEMBL3290655	
+inhibitor	P23526	Adenosylhomocysteinase	14710457	CHEMBL3290656	
+activator	P23526	Adenosylhomocysteinase	14710480 | 14710458	CHEMBL3290657	
+activator	P23526	Adenosylhomocysteinase	14710459 | 14710481	CHEMBL3290658	
+activator	P23526	Adenosylhomocysteinase	14710482 | 14710460	CHEMBL3290659	
+inhibitor	P23526	Adenosylhomocysteinase	14710461 | 14710483	CHEMBL3290660	
+activator	P23526	Adenosylhomocysteinase	14710463 | 14710485	CHEMBL3290662	
+activator	P23526	Adenosylhomocysteinase	14710465 | 14710487	CHEMBL3290663	
+inhibitor	P23526	Adenosylhomocysteinase	14710466	CHEMBL3290664	
+inhibitor	P23526	Adenosylhomocysteinase	14710488 | 14710467	CHEMBL3290665	
+activator	P23526	Adenosylhomocysteinase	14710469	CHEMBL3290667	
+activator	P23526	Adenosylhomocysteinase	14710470 | 14710490	CHEMBL3290668	
+inhibitor	P23526	Adenosylhomocysteinase	14710477	CHEMBL3290653	
+activator	P23526	Adenosylhomocysteinase	14710484	CHEMBL3290661	
+activator	P23526	Adenosylhomocysteinase	14710486	CHEMBL3290649	
+inhibitor	P23526	Adenosylhomocysteinase	14710489	CHEMBL3290666	
+activator	P23526	Adenosylhomocysteinase	15055517 | 15055518 | 15664840	CHEMBL3322562	
+activator	P23526	Adenosylhomocysteinase	15055519	CHEMBL3322561	
+activator	P23526	Adenosylhomocysteinase	15055520	CHEMBL3322560	
+activator	P23526	Adenosylhomocysteinase	15055521	CHEMBL3322559	
+inhibitor	P23526	Adenosylhomocysteinase	15055522	CHEMBL3322558	
+inhibitor	P23526	Adenosylhomocysteinase	15055523	CHEMBL3322557	
+activator	P23526	Adenosylhomocysteinase	15055524	CHEMBL3322556	
+activator	P23526	Adenosylhomocysteinase	15055525	CHEMBL3322555	
+activator	P23526	Adenosylhomocysteinase	15055526	CHEMBL3322554	
+activator	P23526	Adenosylhomocysteinase	15055527 | 15664830	CHEMBL3322553	
+activator	P23526	Adenosylhomocysteinase	15055528 | 15664829	CHEMBL3322552	
+activator	P23526	Adenosylhomocysteinase	15664828 | 15055529	CHEMBL3322551	
+activator	P23526	Adenosylhomocysteinase	15055530 | 15664826	CHEMBL3322550	
+activator	P23526	Adenosylhomocysteinase	15664825 | 15055531	CHEMBL3322549	
+activator	P23526	Adenosylhomocysteinase	15664824 | 15055532	CHEMBL3322548	
+activator	P23526	Adenosylhomocysteinase	15055533 | 15664823	CHEMBL3322547	
+activator	P23526	Adenosylhomocysteinase	15055534 | 15664822	CHEMBL3322546	
+activator	P23526	Adenosylhomocysteinase	15664821 | 15055535	CHEMBL3322545	
+inhibitor	P23526	Adenosylhomocysteinase	15055536 | 15664820	CHEMBL3322544	
+activator	P23526	Adenosylhomocysteinase	15664817 | 15055538	CHEMBL3322542	
+activator	P23526	Adenosylhomocysteinase	15664816 | 15055539	CHEMBL3322541	
+activator	P23526	Adenosylhomocysteinase	15664815 | 15055540	CHEMBL3322540	
+inhibitor	P23526	Adenosylhomocysteinase	15664858 | 15055541	CHEMBL3322539	
+inhibitor	P23526	Adenosylhomocysteinase	15664857 | 15055542	CHEMBL3322538	
+inhibitor	P23526	Adenosylhomocysteinase	15664833 | 15055544	CHEMBL3322536	
+inhibitor	P23526	Adenosylhomocysteinase	15664834 | 15055545	CHEMBL3321765	
+activator	P23526	Adenosylhomocysteinase	15055546 | 15664835	CHEMBL3322535	
+activator	P23526	Adenosylhomocysteinase	15664836 | 15055547	CHEMBL3322534	
+activator	P23526	Adenosylhomocysteinase	15664837 | 15055548	CHEMBL3322533	
+activator	P23526	Adenosylhomocysteinase	15664838 | 15055549	CHEMBL3322532	
+activator	P23526	Adenosylhomocysteinase	15618173	CHEMBL154745	
+activator	P23526	Adenosylhomocysteinase	15618182	CHEMBL310547	
+inhibitor	P23526	Adenosylhomocysteinase	15618184	CHEMBL80375	
+activator	P23526	Adenosylhomocysteinase	15618185	CHEMBL3580900	
+inhibitor	P23526	Adenosylhomocysteinase	15664814	CHEMBL3597812	
+activator	P23526	Adenosylhomocysteinase	15664818	CHEMBL3597813	
+activator	P23526	Adenosylhomocysteinase	15664831	CHEMBL3597816	
+activator	P23526	Adenosylhomocysteinase	15664839	CHEMBL3597832	
+activator	P23526	Adenosylhomocysteinase	15664849	CHEMBL3597823	
+activator	P23526	Adenosylhomocysteinase	15664850	CHEMBL3597822	
+activator	P23526	Adenosylhomocysteinase	15664851	CHEMBL3597821	
+inhibitor	P23526	Adenosylhomocysteinase	15664852	CHEMBL3597820	
+inhibitor	P23526	Adenosylhomocysteinase	15664853	CHEMBL3597819	
+activator	P23526	Adenosylhomocysteinase	15664854	CHEMBL3597818	
+activator	P23526	Adenosylhomocysteinase	15664855	CHEMBL3597817	
+inhibitor	P23526	Adenosylhomocysteinase	20603301 | 19069032	CHEMBL4544781	
+inhibitor	P23526	Adenosylhomocysteinase	19069033	CHEMBL4465968	
+activator	P23526	Adenosylhomocysteinase	19069034	CHEMBL4538845	
+activator	P23526	Adenosylhomocysteinase	20603295	CHEMBL4635734	
+activator	P23526	Adenosylhomocysteinase	20603296	CHEMBL4638533	
+inhibitor	P23526	Adenosylhomocysteinase	20603298	CHEMBL4644901	
+inhibitor	P23526	Adenosylhomocysteinase	20603299	CHEMBL4637324	
+activator	O43865	Adenosylhomocysteinase 2	16449802	CHEMBL2059155	
+activator	O43865	Adenosylhomocysteinase 2	16449803	CHEMBL3753637	
+activator	O43865	Adenosylhomocysteinase 2	16449805	CHEMBL3753746	
+inhibitor	O43865	Adenosylhomocysteinase 2	16449806	CHEMBL3754027	
