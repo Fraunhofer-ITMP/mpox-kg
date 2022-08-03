@@ -9,5 +9,4 @@ The Monkeypox KG is built using viral and human proteins reported in different r
 * Number of Nodes: 8235
 * Number of Edges: 40422
 
-The KG has been exported to formats such as graphml, sif and so on for visualizations in other platforms. For example, the graphml file can be imported to Cytoscape directly.
-These files are located in 'data\export' folder.
+Please check the graph.ipynb for understanding step wise process of KG generation and KG statistics. The KG has been exported to formats such as graphml, sif and so on for visualizations in other platforms. For example, the graphml file can be imported to Cytoscape directly. These files are located in 'data\export' folder.
