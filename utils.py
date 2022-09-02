@@ -14,6 +14,7 @@ from chembl_webresource_client.new_client import new_client
 from pybel import BELGraph
 from pybel.dsl import Protein, Abundance, Pathology, BiologicalProcess
 from tqdm import tqdm
+import time
 
 logger = logging.getLogger("__name__")
 
@@ -656,8 +657,8 @@ def _get_target_data(
                 })
                 df_data.append(tmp)
             
-            time.sleep(1)
-            print('1 seconds of break')
+            #time.sleep(1)
+            #print('1 seconds of break')
 
     # Merge duplicated protein-chemical entries into one
     df = pd.DataFrame()
@@ -700,6 +701,13 @@ def target_list_to_chemical(
     df = _get_target_data(protein_list=proteins, organism=organism)
     return df
 
+def getNodeList(nodeName,itmpGraph):
+    node_list = []
+    for node in itmpGraph.nodes():
+        if isinstance(node,pybel.dsl.Abundance):
+            if node.namespace == nodeName:
+                node_list.append(node.name)
+    return(node_list)
 
 def chembl2rxn_rel(
     chemblid_list,
@@ -711,7 +719,7 @@ def chembl2rxn_rel(
     :param graph:
     :return:
     """
-    infile = open('data/drugReactions.pkl', 'rb')
+    infile = open('data/opentargets/drugReactions.pkl', 'rb')
     rxn_df = pickle.load(infile)
     infile.close()
 
@@ -745,6 +753,28 @@ def cid2chembl(cidList) -> list:
                 cid2chembl_list.append(synonym)
 
     return cid2chembl_list
+    
+# def chembl2rxn_rel(itmpGraph):
+    
+    # infile = open('data/normalized_data/drugReactions.pkl','rb')
+    # rxn_df = pickle.load(infile)
+    # infile.close()
+    
+    # chembl_id = []
+    # for node in itmpGraph.nodes():
+        # if isinstance(node,pybel.dsl.Abundance):
+            # if node.namespace == 'ChEMBL':
+                # chembl_id.append(node.name)
+            
+    # chembl_id_rxn = rxn_df[rxn_df['chembl_id'].isin(chembl_id)]
+    # chembl_id_rxn = chembl_id_rxn.reset_index(drop=True)
+    # for i in range(len(chembl_id_rxn)):
+        # itmpGraph.add_association(Abundance(namespace='ChEMBL',name = chembl_id_rxn['chembl_id'][i]),
+                                  # Pathology(namespace='SideEffect',name = chembl_id_rxn['event'][i]),
+                                  # citation = "OpenTargets Platform",evidence = 'DrugReactions')
+        
+    # return(itmpGraph)
+                        
     
 # def chembl2rxn_rel(itmpGraph):
     
