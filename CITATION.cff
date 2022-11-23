@@ -19,7 +19,7 @@ authors:
     orcid: https://orcid.org/0000-0001-7655-2459
     affiliation: Fraunhofer Institute of Translation Medicine and Pharmacology
 
-version: 0.0.1
+version: v_1.0.1
 date-released: 2022-07-28
-license: MIT License
-repository-code: "https://github.com/Fraunhofer-ITMP/mpox-kg"
+#license: MIT License
+#repository-code: "https://github.com/Fraunhofer-ITMP/mpox-kg"
