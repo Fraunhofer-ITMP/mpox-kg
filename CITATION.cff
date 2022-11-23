@@ -1,25 +1,25 @@
 cff-version: 1.0.0
 message: "If you use this knowledge graph for your analysis, please cite it using this metadata."
-title: "Monkeypox Knowledge Graph: A comprehensive representation of chemical and biological entities associated with Monkeypox"
-abstract: "The outbreak of Monkeypox virus (MPXV) infection in May 2022 has poised yet another threat of global pandemic since COVID-19. As of now, 12,333 cases have been reported and the numbers seem to be rising. The projects and initiatives emerging from the aftermath of COVID-19 have started to respond quickly to facilitate the availability of data and resources for scientific studies. Unfortunately, MPXV pathophysiology and its underlying processes are not yet understood. Likewise, the knowledge of biochemicals and drugs used against MPXV and their downstream effects is sparse. In this paper, we have depicted the chemical and biological aspects of MPXV in a knowledge graph. To achieve this, we have collected and rationally assembled several biological study results, assays, drug candidates, and preclinical evidence to form a dynamic and comprehensive network."
+title: Fraunhofer-ITMP/mpox-kg: Mpox KG 1st release for zenodo 
+#abstract: "The outbreak of Monkeypox virus (MPXV) infection in May 2022 has poised yet another threat of global pandemic since COVID-19. As of now, 12,333 cases have been reported and the numbers seem to be rising. The projects and initiatives emerging from the aftermath of COVID-19 have started to respond quickly to facilitate the availability of data and resources for scientific studies. Unfortunately, MPXV pathophysiology and its underlying processes are not yet understood. Likewise, the knowledge of biochemicals and drugs used against MPXV and their downstream effects is sparse. In this paper, we have depicted the chemical and biological aspects of MPXV in a knowledge graph. To achieve this, we have collected and rationally assembled several biological study results, assays, drug candidates, and preclinical evidence to form a dynamic and comprehensive network."
 authors:
-  - family-names: "Karki"
-    given-names: "Reagon"
-    affiliation: "Fraunhofer Institute of Translation Medicine and Pharmacology"
-  - family-names: "Andrea"
-    given-names: "Zaliani"
-    orcid: "https://orcid.org/0000-0002-1740-8390"
-    affiliation: "Fraunhofer Institute of Translation Medicine and Pharmacology"
-  - family-names: "Gadiya"
-    given-names: "Yojana"
-    orcid: "https://orcid.org/0000-0002-7683-0452"
-    affiliation: "Fraunhofer Institute of Translation Medicine and Pharmacology"
-  - family-names: "Gribbon"
-    given-names: "Philip"
-    orcid: "https://orcid.org/0000-0001-7655-2459"
-    affiliation: "Fraunhofer Institute of Translation Medicine and Pharmacology"
+  - family-names: Karki
+    given-names: Reagon
+    affiliation: Fraunhofer Institute of Translation Medicine and Pharmacology
+  - family-names: Andrea
+    given-names: Zaliani
+    orcid: https://orcid.org/0000-0002-1740-8390
+    affiliation: Fraunhofer Institute of Translation Medicine and Pharmacology
+  - family-names: Gadiya
+    given-names: Yojana
+    orcid: https://orcid.org/0000-0002-7683-0452
+    affiliation: Fraunhofer Institute of Translation Medicine and Pharmacology
+  - family-names: Gribbon
+    given-names: Philip
+    orcid: https://orcid.org/0000-0001-7655-2459
+    affiliation: Fraunhofer Institute of Translation Medicine and Pharmacology
 
 version: 0.0.1
-date-released: "2022-07-28"
+date-released: 2022-07-28
 license: MIT License
 repository-code: "https://github.com/Fraunhofer-ITMP/mpox-kg"
