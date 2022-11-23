@@ -533,6 +533,55 @@ def gene2path_rel(
     return graph
 
 
+# def uniprot_rel(
+    # named_uprotList,
+    # org,
+    # graph
+# ) -> BELGraph:
+    # """Method to add UniProt related edges
+
+    # :param named_uprotList:
+    # :param org:
+    # :param graph:
+    # :return:
+    # """
+    # for item in named_uprotList:
+        # fun = list(named_uprotList[item]['Function'].keys())
+        # bp = list(named_uprotList[item]['BioProcess'].keys())
+        # for f in fun:
+            # if str(named_uprotList[item]['Gene']) != 'nan' and not isinstance(named_uprotList[item]['Gene'], dict):
+                # graph.add_association(
+                    # Protein(namespace=org, name=named_uprotList[item]['Gene']),
+                    # BiologicalProcess(namespace='GOMF', name=f),
+                    # citation='UniProt database',
+                    # evidence='UniProt query'
+                # )
+            # else:
+                # graph.add_association(
+                    # Protein(namespace=org, name=item),
+                    # BiologicalProcess(namespace='GOMF', name=f),
+                    # citation='UniProt database',
+                    # evidence='UniProt query'
+                # )
+
+        # for b in bp:
+            # if str(named_uprotList[item]['Gene']) != 'nan' and not isinstance(named_uprotList[item]['Gene'], dict):
+                # graph.add_association(
+                    # Protein(namespace=org, name=named_uprotList[item]['Gene']),
+                    # BiologicalProcess(namespace='GOBP', name=b),
+                    # citation='UniProt database',
+                    # evidence='UniProt query'
+                # )
+            # else:
+                # graph.add_association(
+                    # Protein(namespace=org, name=item),
+                    # BiologicalProcess(namespace='GOBP', name=b),
+                    # citation='UniProt database',
+                    # evidence='UniProt query'
+                # )
+
+    # return graph
+    
 def uniprot_rel(
     named_uprotList,
     org,
@@ -579,7 +628,15 @@ def uniprot_rel(
                     citation='UniProt database',
                     evidence='UniProt query'
                 )
-
+               
+        
+        if str(named_uprotList[item]['Gene']) != 'nan' and not isinstance(named_uprotList[item]['Gene'], dict):
+            nx.set_node_attributes(graph,{Protein(namespace=org, name=named_uprotList[item]['Gene']):'https://3dbionotes.cnb.csic.es/?queryId='+item},'3Dbio')
+        
+        else:
+            nx.set_node_attributes(graph,{Protein(namespace=org, name=item):'https://3dbionotes.cnb.csic.es/?queryId='+item},'3Dbio')
+            
+        
     return graph
 
 
