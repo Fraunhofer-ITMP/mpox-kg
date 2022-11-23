@@ -18,6 +18,6 @@ authors:
     orcid: "https://orcid.org/0000-0001-7655-2459"
     affiliation: "Fraunhofer Institute of Translation Medicine and Pharmacology"
 title: "Monkeypox Knowledge Graph: A comprehensive representation of chemical and biological entities associated with Monkeypox"
-version: v0.0.1
+version: v1.0.0
 date-released: 2022-07-28
 url: "https://github.com/Fraunhofer-ITMP/mpox-kg"
