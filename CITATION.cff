@@ -1,9 +1,9 @@
 cff-version: 1.1.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Reagon
-    given-names: Karki
-    orcid: https://orcid.org/0000-0002-1815-0037
-title: Fraunhofer-ITMP/mpox-kg: Mpox KG 1st release for zenodo 
+  - family-names: "Reagon"
+    given-names: "Karki"
+    orcid: "https://orcid.org/0000-0002-1815-0037"
+title: "Fraunhofer-ITMP/mpox-kg: Mpox KG 1st release" 
 version: v_1.0.0
 date-released: 2022-11-23
