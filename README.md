@@ -36,7 +36,7 @@ f) In the list of available applications, find Jupyter Notebook and click instal
 
 ### Pre-requisite 2: Cloning this github repository with your pc
 
-This step is to fetch everything from this repo to your pc so that you can run the scripts. FYI: The files are not so big and are safe to be stored in your pc. See (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to learn how to clone. Alternatively, you can download a zipped file and unzip it. 
+This step is to fetch everything from this repo to your pc so that you can run the scripts. FYI: The files are not so big and are safe to be stored in your pc. See (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to learn how to clone. Alternatively, you can download a zipped file and unzip it (Not recommended as each updates have to be downloaded manually). 
 
 ### Running Jupyter Notebook
 
