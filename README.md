@@ -32,15 +32,15 @@ d) You can now give a name for you environment, say: mpox. Switch the version of
 
 e) Once done, you can return to 'Home'. You should see in the middle of screen that 'Applications on' will be 'mpox'. However, please remember that next time you open anaconda, you will have to select 'mpox' again because the environment will be set to 'base (root) by default'.
 
-f) In the list of available applications, find Jupyter Notebook and click install. That's it!!
+f) In the list of available applications, find Jupyter Notebook and click install. We will launch it later. That's it!! 
 
 ### Pre-requisite 2: Cloning this github repository with your pc
 
-This step is to fetch everything from this repo to your pc so that you can run the scripts. FYI: The files are not so big and are safe to be stored in your pc. See (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to learn how to clone. Alternatively, you can download a zipped file and unzip it
+This step is to fetch everything from this repo to your pc so that you can run the scripts. FYI: The files are not so big and are safe to be stored in your pc. See (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to learn how to clone. Alternatively, you can download a zipped file and unzip it. 
 
 ### Running Jupyter Notebook
 
-Once you have fulfilled the pre-requisites you can proceed to generate KG on your own. Please open the graph.ipynb for understanding step wise process of KG generation and KG statistics. The KG has been exported to formats such as graphml, sif and so on for visualizations in other platforms. For example, the graphml file can be imported to Cytoscape directly. These files are located in 'data\export' folder.
+Once you have fulfilled the pre-requisites you can proceed to generate KG on your own. Make sure you have anaconda open, environment set to 'mpox'. Now you can launch the Jupyter Notebook. Browse to the folder where you have cloned/unzipped this repo previously. Now open the graph.ipynb from this folder for understanding step wise process of KG generation and KG statistics. The KG has been exported to formats such as graphml, sif and so on for visualizations in other platforms. For example, the graphml file can be imported to Cytoscape directly. These files are located in 'data\export' folder.
 
 # Dissemination and deployment
 
