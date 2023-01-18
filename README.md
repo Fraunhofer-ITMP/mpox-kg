@@ -18,6 +18,9 @@ Version 2 stats (2nd September) :
 
 # Running the KG 
 
+## Installation of python 3.10 and jupyter notebook
+
+
 Please check the graph.ipynb for understanding step wise process of KG generation and KG statistics. The KG has been exported to formats such as graphml, sif and so on for visualizations in other platforms. For example, the graphml file can be imported to Cytoscape directly. These files are located in 'data\export' folder.
 
 # Dissemination and deployment
