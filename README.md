@@ -18,8 +18,19 @@ Version 2 stats (2nd September) :
 
 # Running the KG 
 
-### Installation of python 3.10 and jupyter notebook
+### Pre-requisite: Installation of python 3 and jupyter notebook (Please skip it if you already have these in your pc)
 
+We recommend installing anaconda (https://www.anaconda.com/) which will automatically install python and jupyter notebook. 
+
+a) Next step would be to create a dedicated environment within anaconda to run the scripts. To do this, open anaconda. You'll be able to see HOME at the left of the screen.
+
+b) Underneath HOME, you'll see Environments. Click it. 
+
+c) At the bottom of the page, you'll see 'Create' with a '+' sign. Click it. 
+
+d) You can now give a name for you environment, say: mpox. Switch the version of python to 3.10 and click create. It will take few minutes.
+
+e) Once done, you can now click 'Home' and you should see in the middle of screen that 'Applications on' will be 'mpox'. However, please remember that next time you open anaconda, you will have to select 'mpox' again because the original environment will be set to 'base (root)'.
 
 Please check the graph.ipynb for understanding step wise process of KG generation and KG statistics. The KG has been exported to formats such as graphml, sif and so on for visualizations in other platforms. For example, the graphml file can be imported to Cytoscape directly. These files are located in 'data\export' folder.
 
