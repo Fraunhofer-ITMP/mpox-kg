@@ -16,9 +16,9 @@ Version 2 stats (2nd September) :
 * Number of Nodes: 9129
 * Number of Edges: 44568
 
-# Running the KG 
+# Running KG workflow and visualization  
 
-### Pre-requisite: Installation of python 3 and jupyter notebook (Please skip it if you already have these in your pc)
+### Pre-requisite 1: Installation of python 3 and jupyter notebook (Please skip it if you already have these in your pc)
 
 We recommend installing anaconda (https://www.anaconda.com/) which will automatically install python and jupyter notebook. 
 
@@ -30,7 +30,11 @@ c) At the bottom of the page, you'll see 'Create' with a '+' sign. Click it.
 
 d) You can now give a name for you environment, say: mpox. Switch the version of python to 3.10 and click create. It will take few minutes.
 
-e) Once done, you can now click 'Home' and you should see in the middle of screen that 'Applications on' will be 'mpox'. However, please remember that next time you open anaconda, you will have to select 'mpox' again because the original environment will be set to 'base (root)'.
+e) Once done, you can  click 'Home'. You should see in the middle of screen that 'Applications on' will be 'mpox'. However, please remember that next time you open anaconda, you will have to select 'mpox' again because the original environment will be set to 'base (root)'.
+
+### Pre-requisite 2: Cloning this github repository with your pc
+
+This step is to fetch everything from this repo to your pc so that you can run the scripts. FYI: The files are not so big. git 
 
 Please check the graph.ipynb for understanding step wise process of KG generation and KG statistics. The KG has been exported to formats such as graphml, sif and so on for visualizations in other platforms. For example, the graphml file can be imported to Cytoscape directly. These files are located in 'data\export' folder.
 
