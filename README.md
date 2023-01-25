@@ -22,7 +22,6 @@ Version 3 stats (15th Jan):
 * Number of Edges: 44317
 
 ![KG Stats](https://github.com/Fraunhofer-ITMP/mpox-kg/blob/main/data/export/KG_stat.png)
-
 # Running KG workflow and visualization  
 
 ### Pre-requisite 1: Installation of python 3 and jupyter notebook (Please skip it if you already have these)
