@@ -5,7 +5,7 @@
 import logging
 import pickle
 from collections import defaultdict
-
+import networkx as nx
 import pandas as pd
 import pubchempy as pcp
 import requests
@@ -15,6 +15,8 @@ from pybel import BELGraph
 from pybel.dsl import Protein, Abundance, Pathology, BiologicalProcess
 from tqdm import tqdm
 import time
+import seaborn as sns
+import pybel
 
 logger = logging.getLogger("__name__")
 
@@ -31,7 +33,8 @@ def RetMech(chemblIds) -> dict:
     for chemblid in tqdm(chemblIds, desc='Retrieving mechanisms from ChEMBL'):
         mechs = getMech.filter(
             molecule_chembl_id=chemblid
-        ).only(['mechanism_of_action', 'target_chembl_id'])
+        ).only(['mechanism_of_action', 'target_chembl_id','action_type'])
+        
         mechList.append(list(mechs))
 
     named_mechList = dict(zip(chemblIds, mechList))
@@ -73,6 +76,7 @@ def RetAct(chemblIds) -> dict:
     :return:
     """
     GetAct = new_client.activity
+    getTar = new_client.target
     ActList = []
     filtered_list=['assay_chembl_id','assay_type','pchembl_value','target_chembl_id',
                    'target_organism','bao_label','target_type']
@@ -95,19 +99,26 @@ def RetAct(chemblIds) -> dict:
         
         #print(chemblIds[i])
         data = []
-
+        #print(acts)
+        
         for d in acts:
 
             if float(d.get('pchembl_value')) < 6:
                 continue
-            
-#             try:
-#                 if d['target_type'] in ('CELL-LINE', 'UNCHECKED'):
-#                     continue
-#             except KeyError:
-#                 continue
+                            
             if (d.get('bao_label') != 'single protein format'):
                 continue
+                
+            tar = d.get('target_chembl_id')   
+            tar_dict = getTar.get(tar)
+            #print(tar_dict)
+            
+            try:
+                if tar_dict['target_type'] in ('CELL-LINE', 'UNCHECKED'):
+                    continue
+            except KeyError:
+                continue
+                
 
             #uprot_id = d['target_components'][0]['accession']
             #print(uprot_id)
@@ -329,7 +340,7 @@ def ExtractFromUniProt(uniprot_id) -> dict:
 
     mapped_uprot = []
 
-    for id in uniprot_id:
+    for id in tqdm(uniprot_id):
 
         # Retrieve data for id in text format if found in uniprot
         ret_uprot = requests.get(
@@ -410,6 +421,14 @@ def chem2moa_rel(
     :param graph: BEL graph of Monkeypox
     :return:
     """
+    
+    #identified types of chemical and protein action types
+    #['INHIBITOR','NEGATIVE ALLOSTERIC MODULATOR','POSITIVE ALLOSTERIC MODULATOR','ANTAGONIST','AGONIST','MODULATOR','BLOCKER','ACTIVATOR','DISRUPTING AGENT', 'SUBSTRATE', 'OPENER','PARTIAL AGONIST','SEQUESTERING AGENT']
+    # following lists are used to determine type of edge relationships
+    pos = ['POSITIVE ALLOSTERIC MODULATOR','AGONIST','ACTIVATOR','PARTIAL AGONIST']
+    neg = ['INHIBITOR','NEGATIVE ALLOSTERIC MODULATOR','ANTAGONIST','BLOCKER']
+    misc = ['MODULATOR','DISRUPTING AGENT','SUBSTRATE','OPENER','SEQUESTERING AGENT']
+
     for chembl_name, chembl_entries in tqdm(named_mechList.items(), desc='Populating Chemical-MoA edges'):
         for info in chembl_entries:
             graph.add_association(
@@ -423,19 +442,36 @@ def chem2moa_rel(
                 continue
 
             if 'Protein' in info:
-                graph.add_association(
-                    Abundance(namespace='ChEMBL', name=chembl_name),
-                    Protein(namespace=org, name=info['Protein']),
-                    citation='ChEMBL database',
-                    evidence='ChEMBL query'
-                )
-            else:
-                graph.add_association(
-                    Abundance(namespace='ChEMBL', name=chembl_name),
-                    Protein(namespace=org, name=info['target_chembl_id']),
-                    citation='ChEMBL database',
-                    evidence='ChEMBL query'
-                )
+                if info['action_type'] in pos:
+                    graph.add_increases(
+                        Abundance(namespace='ChEMBL', name=chembl_name),
+                        Protein(namespace=org, name=info['Protein']),
+                        citation='ChEMBL database',
+                        evidence='ChEMBL query'
+                    )
+                if info['action_type'] in neg:
+                    graph.add_decreases(
+                        Abundance(namespace='ChEMBL', name=chembl_name),
+                        Protein(namespace=org, name=info['Protein']),
+                        citation='ChEMBL database',
+                        evidence='ChEMBL query'
+                    )
+
+                if info['action_type'] in misc:
+                    graph.add_association(
+                        Abundance(namespace='ChEMBL', name=chembl_name),
+                        Protein(namespace=org, name=info['Protein']),
+                        citation='ChEMBL database',
+                        evidence='ChEMBL query'
+                    )
+
+            # else:
+                # graph.add_association(
+                    # Abundance(namespace='ChEMBL', name=chembl_name),
+                    # Protein(namespace=org, name=info['target_chembl_id']),
+                    # citation='ChEMBL database',
+                    # evidence='ChEMBL query'
+                # )
 
     return graph
 
@@ -483,13 +519,13 @@ def chem2act_rel(
                         citation='ChEMBL database',
                         evidence='ChEMBL query'
                     )
-                else:
-                    graph.add_association(
-                        Abundance(namespace='ChEMBLAssay', name=chem_data['assay_chembl_id']),
-                        Protein(namespace=org, name=chem_data['target_chembl_id']),
-                        citation='ChEMBL database',
-                        evidence='ChEMBL query'
-                    )
+                # else:
+                    # graph.add_association(
+                        # Abundance(namespace='ChEMBLAssay', name=chem_data['assay_chembl_id']),
+                        # Protein(namespace=org, name=chem_data['target_chembl_id']),
+                        # citation='ChEMBL database',
+                        # evidence='ChEMBL query'
+                    # )
 
             graph.add_association(
                 Abundance(namespace='ChEMBL', name=chemical),
@@ -526,7 +562,7 @@ def gene2path_rel(
                 citation='ChEMBL database',
                 evidence='ChEMBL query',
                 annotation={
-                    'Reactome': named_chem2geneList[item][j]['xref_id']
+                    'Reactome': 'https://reactome.org/content/detail/'+named_chem2geneList[item][j]['xref_id']
                 }
             )
 
@@ -594,7 +630,7 @@ def uniprot_rel(
     :param graph:
     :return:
     """
-    for item in named_uprotList:
+    for item in tqdm(named_uprotList):
         fun = list(named_uprotList[item]['Function'].keys())
         bp = list(named_uprotList[item]['BioProcess'].keys())
         for f in fun:
@@ -632,10 +668,13 @@ def uniprot_rel(
         
         if str(named_uprotList[item]['Gene']) != 'nan' and not isinstance(named_uprotList[item]['Gene'], dict):
             nx.set_node_attributes(graph,{Protein(namespace=org, name=named_uprotList[item]['Gene']):'https://3dbionotes.cnb.csic.es/?queryId='+item},'3Dbio')
+            
+            nx.set_node_attributes(graph,{Protein(namespace=org, name=named_uprotList[item]['Gene']):'https://www.uniprot.org/uniprotkb/'+item},'UniProt')
         
         else:
             nx.set_node_attributes(graph,{Protein(namespace=org, name=item):'https://3dbionotes.cnb.csic.es/?queryId='+item},'3Dbio')
             
+            nx.set_node_attributes(graph,{Protein(namespace=org, name=item):'https://www.uniprot.org/uniprotkb/'+item},'UniProt')
         
     return graph
 
@@ -758,13 +797,21 @@ def target_list_to_chemical(
     df = _get_target_data(protein_list=proteins, organism=organism)
     return df
 
-def getNodeList(nodeName,itmpGraph):
+def getNodeList(nodeName,graph):
+    #import pybel
     node_list = []
-    for node in itmpGraph.nodes():
+    for node in graph.nodes():
         if isinstance(node,pybel.dsl.Abundance):
             if node.namespace == nodeName:
                 node_list.append(node.name)
     return(node_list)
+    
+def chembl_annotation(graph):
+    chemblids = getNodeList('ChEMBL',graph)
+    for item in chemblids:
+        nx.set_node_attributes(graph,{Abundance(namespace='ChEMBL',
+                                               name=item):'https://www.ebi.ac.uk/chembl/compound_report_card/'+item},'ChEMBL')
+    return graph
 
 def chembl2rxn_rel(
     chemblid_list,
@@ -810,6 +857,24 @@ def cid2chembl(cidList) -> list:
                 cid2chembl_list.append(synonym)
 
     return cid2chembl_list
+  
+
+#function to create sub-graph  
+def filter_graph(mainGraph, vprotList):
+    nsp_list = []
+    chem_list = []
+    for u, v, data in mainGraph.edges(data=True):
+        if u.name in vprotList or v.name in vprotList:
+            #print(u.name)
+            nsp_list.append(u)
+            #print(u)
+            #print(v.name)
+            nsp_list.append(v)
+
+    nsp_graph = mainGraph.subgraph(nsp_list)
+    #nsp_graph = pybel.struct.mutation.induction_expansion.get_subgraph_by_second_neighbors(mpox_graph, nsp_list, filter_pathologies=False)
+    return(nsp_graph)
+
     
 # def chembl2rxn_rel(itmpGraph):
     
@@ -1086,3 +1151,73 @@ def cid2chembl(cidList) -> list:
 #     #df.to_csv(os.path.join(output_dir, 'chemical_annotated.csv'), sep='\t', index=False)
 #     return(df)
    
+#function to annotate protein nodes with uniprot/3dbionotes
+   
+# def uniprot_rel_test(
+    # named_uprotList,
+    # org,
+    # graph
+# ) -> BELGraph:
+    # """Method to add UniProt related edges
+
+    # :param named_uprotList:
+    # :param org:
+    # :param graph:
+    # :return:
+    # """
+    # for item in named_uprotList:
+        # fun = list(named_uprotList[item]['Function'].keys())
+        # bp = list(named_uprotList[item]['BioProcess'].keys())
+        # for f in fun:
+            # if str(named_uprotList[item]['Gene']) != 'nan' and not isinstance(named_uprotList[item]['Gene'], dict):
+                # graph.add_association(
+                    # Protein(namespace=org, name=named_uprotList[item]['Gene']),
+                    # BiologicalProcess(namespace='GOMF', name=f),
+                    # citation='UniProt database',
+                    # evidence='UniProt query'
+                # )
+            # else:
+                # graph.add_association(
+                    # Protein(namespace=org, name=item),
+                    # BiologicalProcess(namespace='GOMF', name=f),
+                    # citation='UniProt database',
+                    # evidence='UniProt query'
+                # )
+
+        # for b in bp:
+            # if str(named_uprotList[item]['Gene']) != 'nan' and not isinstance(named_uprotList[item]['Gene'], dict):
+                # graph.add_association(
+                    # Protein(namespace=org, name=named_uprotList[item]['Gene']),
+                    # BiologicalProcess(namespace='GOBP', name=b),
+                    # citation='UniProt database',
+                    # evidence='UniProt query'
+                # )
+            # else:
+                # graph.add_association(
+                    # Protein(namespace=org, name=item),
+                    # BiologicalProcess(namespace='GOBP', name=b),
+                    # citation='UniProt database',
+                    # evidence='UniProt query'
+                # )
+               
+        
+        # if str(named_uprotList[item]['Gene']) != 'nan' and not isinstance(named_uprotList[item]['Gene'], dict):
+            # nx.set_node_attributes(graph,{Protein(namespace=org, name=named_uprotList[item]['Gene']):'https://3dbionotes.cnb.csic.es/?queryId='+item},'3Dbio')
+        
+        # else:
+            # nx.set_node_attributes(graph,{Protein(namespace=org, name=item):'https://3dbionotes.cnb.csic.es/?queryId='+item},'3Dbio')
+            
+            
+        
+    # return graph
+    
+    
+# get types of action types for chemicals and proteins    
+# actionType_list = []
+# for item in chem2mech:
+    # for i in range(len(chem2mech[item])):
+        # if chem2mech[item][i]['action_type'] != None:
+            # if chem2mech[item][i]['action_type'] not in actionType_list:
+                # actionType_list.append(chem2mech[item][i]['action_type'])
+                
+# actionType_list
