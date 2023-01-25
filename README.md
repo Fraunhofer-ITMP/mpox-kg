@@ -16,6 +16,11 @@ Version 2 stats (2nd September) :
 * Number of Nodes: 9129
 * Number of Edges: 44568
 
+Version 3 stats (15th Jan): 
+
+* Number of Nodes: 9117
+* Number of Edges: 44317
+
 # Running KG workflow and visualization  
 
 ### Pre-requisite 1: Installation of python 3 and jupyter notebook (Please skip it if you already have these)
