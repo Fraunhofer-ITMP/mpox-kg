@@ -1,8 +1,8 @@
 
 
-# Monkeypox Knowledge Graph
+# Mpox Knowledge Graph
 
-The Monkeypox KG is built using viral and human proteins reported in different resources. Additionally, the KG represents chemicals tested against Monkeypox and their targets, associated biological processes, molecular functions, diseases and side effects. 
+The Mpox KG is built using viral and human proteins reported in different resources. Additionally, the KG represents chemicals tested against Monkeypox and their targets, associated biological processes, molecular functions, diseases and side effects. 
 
 **KG status**
 
