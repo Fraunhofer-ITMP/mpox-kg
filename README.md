@@ -24,6 +24,12 @@ Version 3 stats (15th Jan):
 ![KG Stats](https://github.com/Fraunhofer-ITMP/mpox-kg/blob/main/data/export/KG_stat.png)
 # Running KG workflow and visualization  
 
+## Method 1: Using mybinder (No pre-installations required, recommended for non-programmers)
+
+Thanks to mybinder.org. The resources are hosted publicly facilitating users to instantly access the KG. Please go to: https://mybinder.org/v2/gh/Fraunhofer-ITMP/mpox-kg/HEAD. The loading might take some time. Please be patient. For optimal experience, once the resources are loaded, from the list of headers at the top of the page (File, Edit,..Setting, Help), go to Help -> Launch Classic Notebook. Once done, you can open the ipynb file and execute the cells.
+
+## Method 2: Using local setup (Pre-installations required, intended for researchers with advanced programming skills)
+
 ### Pre-requisite 1: Installation of python 3 and jupyter notebook (Please skip it if you already have these)
 
 We recommend installing anaconda (https://www.anaconda.com/) which will automatically have python pre-installed whereas jupyter notebook can be installed with a click. 
