@@ -26,7 +26,7 @@ Version 3 stats (15th Jan):
 
 ## Method 1: Using mybinder (No pre-installations required, recommended for non-programmers)
 
-Thanks to mybinder.org. The resources are hosted publicly facilitating users to instantly access the KG. Please go to: https://mybinder.org/v2/gh/Fraunhofer-ITMP/mpox-kg/HEAD. The loading might take some time. Please be patient. For optimal experience, once the resources are loaded, from the list of headers at the top of the page (File, Edit,..Setting, Help), go to Help -> Launch Classic Notebook. Once done, you can open the ipynb file and execute the cells.
+Thanks to mybinder.org. The resources are hosted publicly facilitating users to instantly access the KG. Please go to: https://mybinder.org/v2/gh/Fraunhofer-ITMP/mpox-kg/HEAD. The loading might take some time. Please be patient. For optimal experience, once the resources are loaded, from the list of headers at the top of the page (File, Edit,..Setting, Help), go to Help -> Launch Classic Notebook. **Note: This is also important to get the graph visualized, else it might not work.** Once done, you can open the ipynb file and execute the cells.
 
 ## Method 2: Using local setup (Pre-installations required, intended for researchers with advanced programming skills)
 
