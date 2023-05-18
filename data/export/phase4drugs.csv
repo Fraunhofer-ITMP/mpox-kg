@@ -1,30 +1,30 @@
 ,max_phase_for_ind,mesh_heading,Drug
 0,4,Virus Diseases,CHEMBL116
-1,4,Virus Diseases,CHEMBL3137312
-2,4,"Hepatitis C, Chronic",CHEMBL1643
-3,4,Liver Cirrhosis,CHEMBL1643
-4,4,Virus Diseases,CHEMBL1643
+1,4,"Hepatitis C, Chronic",CHEMBL1643
+2,4,Liver Cirrhosis,CHEMBL1643
+3,4,Virus Diseases,CHEMBL1643
+4,4,Fibrosis,CHEMBL1643
 5,4,Fibrosis,CHEMBL1643
-6,4,Fibrosis,CHEMBL1643
-7,4,Virus Diseases,CHEMBL61
-8,4,Condylomata Acuminata,CHEMBL61
-9,4,"Carcinoma, Squamous Cell",CHEMBL61
-10,4,Virus Diseases,CHEMBL115
-11,4,Hepatitis C,CHEMBL1259059
-12,4,"Hepatitis C, Chronic",CHEMBL1259059
-13,4,Virus Diseases,CHEMBL1259059
-14,4,Virus Diseases,CHEMBL853
-15,4,"Hepatitis C, Chronic",CHEMBL163
-16,4,HIV Infections,CHEMBL163
-17,4,HIV Infections,CHEMBL163
-18,4,Hepatitis C,CHEMBL163
-19,4,Virus Diseases,CHEMBL163
-20,4,Virus Diseases,CHEMBL1257073
-21,4,Smallpox,CHEMBL1257073
-22,4,Virus Diseases,CHEMBL584
-23,4,Virus Diseases,CHEMBL152
-24,4,Cytomegalovirus Retinitis,CHEMBL152
-25,4,Primary Immunodeficiency Diseases,CHEMBL152
-26,4,HIV Infections,CHEMBL57
-27,4,HIV Infections,CHEMBL57
-28,4,Virus Diseases,CHEMBL57
+6,4,Virus Diseases,CHEMBL1257073
+7,4,Smallpox,CHEMBL1257073
+8,4,Virus Diseases,CHEMBL115
+9,4,HIV Infections,CHEMBL57
+10,4,HIV Infections,CHEMBL57
+11,4,Virus Diseases,CHEMBL57
+12,4,Virus Diseases,CHEMBL152
+13,4,Cytomegalovirus Retinitis,CHEMBL152
+14,4,Primary Immunodeficiency Diseases,CHEMBL152
+15,4,Virus Diseases,CHEMBL3137312
+16,4,Virus Diseases,CHEMBL61
+17,4,Condylomata Acuminata,CHEMBL61
+18,4,"Carcinoma, Squamous Cell",CHEMBL61
+19,4,Virus Diseases,CHEMBL853
+20,4,Virus Diseases,CHEMBL584
+21,4,"Hepatitis C, Chronic",CHEMBL163
+22,4,HIV Infections,CHEMBL163
+23,4,HIV Infections,CHEMBL163
+24,4,Hepatitis C,CHEMBL163
+25,4,Virus Diseases,CHEMBL163
+26,4,Hepatitis C,CHEMBL1259059
+27,4,"Hepatitis C, Chronic",CHEMBL1259059
+28,4,Virus Diseases,CHEMBL1259059
