@@ -328,9 +328,6 @@ def createKG():
     #import matplotlib.pyplot as plt
     #import matplotlib.image as mpimg
     image = mpimg.imread("data/KGG.png")
-    
-    #image.axes.get_xaxis().set_visible(False)
-    #image.axes.get_yaxis().set_visible(False)
     plt.imshow(image)
     plt.axis('off')
     plt.show()
