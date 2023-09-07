@@ -340,7 +340,7 @@ def ExtractFromUniProt(uniprot_id) -> dict:
 
     mapped_uprot = []
 
-    for id in tqdm(uniprot_id):
+    for id in tqdm(uniprot_id, desc='Fetching Protein-related info'):
 
         # Retrieve data for id in text format if found in uniprot
         ret_uprot = requests.get(
@@ -839,6 +839,25 @@ def chembl2rxn_rel(
 
     return graph
 
+
+def cas2cid(cas):
+    import re
+    cid_clean = []
+    #cid = [pcp.get_compounds(id,'name') for id in cas]
+    for id in cas:
+        print(id)
+        #retrieves cid for given cas 
+        cid = pcp.get_compounds(id,'name')
+        print(cid)
+        #strip unwanted strings to get cid 
+        filter_cid = re.findall('\((.+?)\)',str(cid))
+        #print(filter_cid[0])
+        if len(filter_cid) > 0:
+            cid_clean.append(filter_cid[0])
+        else:
+            cid_clean.append('None')
+
+    return(cid_clean)
 
 def cid2chembl(cidList) -> list:
     """Method to convert Pubchem CIDs to ChEMBL ids
