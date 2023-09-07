@@ -21,6 +21,7 @@ import json
 from utils import *
 
 import matplotlib.pyplot as plt
+from IPython.display import display, HTML
 
 from IPython.display import Markdown, display
 
@@ -67,8 +68,8 @@ def searchDisease(name):
         df = df[['index','id','name']]
         df.style.hide(axis='index')  
         print('\n')
-        print(df.head(20))
-        
+        #print(df.head(20))
+        display(HTML(df.to_html(index=False)))
         
     # else:
         # print('\n')
@@ -95,8 +96,8 @@ def Generate_KG():
     print('\n')
     if not temp.empty:
         printmd('**Here you go! Hopefully your disease of interest is in the list. If so, let\'s get started.**')
-        #print('\n')
-        print(temp)
+        print('\n')
+        #print(temp)
         #return(temp)
     else: 
         print('Ooops!! Did you have a typo in the name. Please try again!')
@@ -312,14 +313,15 @@ def KG_namespace_plot(final_kg):
     plt.show()    
     
 def createKG():
-
+    
+    #global doid
     doid = Generate_KG()
-    print(doid)
+    #print(doid)
     
     time.sleep(0.1)
     
     efo_id = int(input('Please enter the index value of your disease of interest. Input: '))
-    print(efo_id)
+    #print(efo_id)
     print('\n')
     
     print('Please enter the clinical trial phase of chemicals which should be identified by the workflow. Use a number between 1 (early phase) and 4 (FDA approved). For example, if you use 3, the KG will fetch chemicals that are in phase 3. Also, remember that lower the input value, higher will be the number of identified chemicals and therefore the running time of workflow also increases.')
@@ -334,7 +336,7 @@ def createKG():
     
     print('\n')
     
-    print(doid['id'][efo_id])
+    #print(doid['id'][efo_id])
     
     #df_dis2prot = GetDiseaseAssociatedProteins(efo_id)
     
