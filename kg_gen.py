@@ -2,6 +2,7 @@
 
 """Utils files with all functions relevant to generation of KG."""
 
+from IPython.display import Image
 import logging
 import pickle
 from collections import defaultdict
@@ -21,6 +22,8 @@ import json
 from utils import *
 
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
 from IPython.display import display, HTML
 
 from IPython.display import Markdown, display
@@ -67,7 +70,7 @@ def searchDisease(name):
         df.style.hide(axis='index')
         df = df[['index','id','name']]
         df.style.hide(axis='index')  
-        print('\n')
+        #print('\n')
         #print(df.head(20))
         display(HTML(df.to_html(index=False)))
         
@@ -84,8 +87,11 @@ def printmd(string, color=None):
 
 
 def Generate_KG():
-    
+        
+    from IPython.display import Image    
     printmd("**Welcome to the KG Generator tool. In the following steps, we will need a couple of inputs from your side.**",color = "blue")
+   
+    Image(filename='data/KGG.png')
     
     #this is required to get above printed before the input is asked
     time.sleep(0.05)
@@ -93,17 +99,17 @@ def Generate_KG():
     dis = input('Please enter the disease you are interested in and we will try to find the best matches for you.' +'\n' + '\n' + 'Input: ')
     temp = searchDisease(dis)
     #print(temp)
-    print('\n')
+    #print('\n')
     if not temp.empty:
         printmd('**Here you go! Hopefully your disease of interest is in the list. If so, let\'s get started.**')
-        print('\n')
+        #print('\n')
         #print(temp)
-        #return(temp)
+        return(temp)
     else: 
         print('Ooops!! Did you have a typo in the name. Please try again!')
-        Generate_KG()
+        return(Generate_KG())
         
-    return(temp)
+    #return(temp)
         
 def GetDiseaseAssociatedProteins(disease_id):   
     
@@ -176,11 +182,13 @@ def GetDiseaseAssociatedProteins(disease_id):
     
     print('We have identified ' + str(len(df)) + ' proteins (Swiss-Prot) associated with the disease. Following is a histogram that shows '
          + 'distribution of proteins based on scores provided by OpenTargets. The scores are influenced by various factors '
-         + 'such as genetic associations, expression, mutations, known pathways, targeting drugs and so on.')
+         + 'such as genetic associations, expression, mutations, known pathways, targeting drugs and so on.'+'\n')
     
-    print('\n')
-    print(df,'\n')
-    
+    print('Displaying top 20 genes')
+    df_display = df.head(20)
+    display(HTML(df_display.to_html(index=False)))
+    #print(df,'\n')
+    #print('\n')
     
     fig, ax = plt.subplots()
     ax.hist(df['Score'])
@@ -204,7 +212,10 @@ def GetDiseaseAssociatedProteins(disease_id):
     
     
     print('\n','Total no. of proteins: ',len(df))
+   
+    #display(HTML(df.to_html(index=False)))
     print('\n',df)
+    #print('\n')
     return(df)
     
 def getDrugCount(disease_id):
@@ -313,8 +324,17 @@ def KG_namespace_plot(final_kg):
     plt.show()    
     
 def createKG():
+
+    #import matplotlib.pyplot as plt
+    #import matplotlib.image as mpimg
+    image = mpimg.imread("data/KGG.png")
     
-    #global doid
+    #image.axes.get_xaxis().set_visible(False)
+    #image.axes.get_yaxis().set_visible(False)
+    plt.imshow(image)
+    plt.axis('off')
+    plt.show()
+    
     doid = Generate_KG()
     #print(doid)
     
